@@ -30,7 +30,7 @@ const reservationSchema = new Schema({
     creator: {
         type: Schema.Types.ObjectId,
         ref: 'User'
-    }
+    },
 });
 
 const Reservation = model('Reservation', reservationSchema);

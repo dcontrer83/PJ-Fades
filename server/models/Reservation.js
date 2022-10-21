@@ -25,12 +25,6 @@ const reservationSchema = new Schema({
         type: Date,
         requried: true
     },
-    slot: [
-        {
-            type: Schema.Types.ObjectId,
-            ref: 'TimeSlot'
-        }
-    ]
 });
 
 const Reservation = model('Reservation', reservationSchema);

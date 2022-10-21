@@ -4,7 +4,6 @@ const { User, Reservation, Booking } = require('../models/index');
 // Import Authentication
 const { signToken } = require('../utils/auth');
 const { AuthenticationError } = require('apollo-server-express');
-const Reservation = require('../models/Reservation');
 
 
 const resolvers = {
@@ -39,13 +38,13 @@ const resolvers = {
             return Booking.findOne({ _id: bookingId });
         }
     },
-
     Mutation: {
         // Add a User
         addUser: async (parent, args) => {
             try {
-                const userData = User.create(args);     // Create a User based on the arguments passed in
-                const token = signToken(userData);      // Generate JSON web token for the user
+                const userData = await User.create(args);     // Create a User based on the arguments passed in
+                const token = signToken(userData);              // Generate JSON web token for the user
+                return { token, userData }
             } catch (err) {
                 throw err;
             }
@@ -117,7 +116,7 @@ const resolvers = {
             try {
                 // Find the Reservation then retrieve the User ID
                 const reservation = Reservation.findOne({ _id: reservationId });
-                const userId = reservation.creator;
+                const userId = reservation.user;
 
                 const bookingData = await Booking.create({
                     reservation: reservationId,
@@ -135,8 +134,7 @@ const resolvers = {
                 const bookingData = Booking.findOneAndDelete({
                     _id: bookingId
                 });
-                return bookingData
-
+                return bookingData;
             } catch (err) {
                 throw err
             }

@@ -5,7 +5,7 @@ const reservationSchema = new Schema({
     // Type of Service being reserved for
     type: {
         type: String,
-        required: True
+        required: true
     },
     // Comments made by the User
     comments: {
@@ -24,14 +24,14 @@ const reservationSchema = new Schema({
         requried: true
     },
     // Person who created the reservation
-    creator: {
+    user: {
         type: Schema.Types.ObjectId,
         ref: 'User'
     },
     // Is the reservation approved by the Admin?
     isApproved: {
         type: Boolean,
-        required: True,
+        required: true,
         default: UniqueOperationTypesRule
     }
 });

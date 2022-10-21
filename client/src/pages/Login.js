@@ -72,7 +72,7 @@ const Login = (props) => {
                         />
                         <button
                             // className=""
-                            style={{ cursor: 'pointer' }}
+                            // style={{ cursor: 'pointer' }}
                             type="submit"
                         >
                             Submit

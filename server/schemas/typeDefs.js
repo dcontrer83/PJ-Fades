@@ -32,6 +32,13 @@ const typeDefs = gql`
         user: User
     }
 
+    input ReservationInput {
+        type: String!
+        comments: String!
+        price: Int
+        date: String
+    }
+
     type Query {
         user(username: String!): User
         users: [User]
@@ -44,7 +51,7 @@ const typeDefs = gql`
     type Mutation {
         addUser(username: String!, email: String!, password: String!): Auth
         login(email: String!, password: String!): Auth
-        createReservation(type: String!, comments: String!, price: Int!, date: String!, user: User!, isApproved: Boolean!): Reservation
+        createReservation(reservationInput: ReservationInput): Reservation
         deleteReservation(reservationId: ID!): Reservation
         createBooking(reservationId: ID!): Booking
         deleteBooking(bookingId: ID!): Booking

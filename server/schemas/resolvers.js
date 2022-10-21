@@ -77,11 +77,11 @@ const resolvers = {
             }
         },
         // Create a new Reservation
-        createReservation: async (parent, args, context) => {
+        createReservation: async (parent, { reservationInput }, context) => {
             try {
                 if (context.user) {
                     // Create the Reservation
-                    const reservationData = await Reservation.create(args);
+                    const reservationData = await Reservation.create(reservationInput);
 
                     // Add the reservation to the User
                     await User.findOneAndUpdate(

@@ -21,10 +21,16 @@ const reservationSchema = new Schema({
         type: Number,
         required: true
     },
+    // Date selected for the Service
     date: {
         type: Date,
         requried: true
     },
+    // Person who created the reservation
+    creator: {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+    }
 });
 
 const Reservation = model('Reservation', reservationSchema);

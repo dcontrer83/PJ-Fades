@@ -1,21 +1,42 @@
-// Import User Model
-const User = require('../models/index');
+// Import Models
+const { User, Reservation, Booking } = require('../models/index');
 
 // Import Authentication
 const { signToken } = require('../utils/auth');
 const { AuthenticationError } = require('apollo-server-express');
+const Reservation = require('../models/Reservation');
 
 
 const resolvers = {
     Query: {
         // Retrieve all Users
         users: async () => {
-            return User.find();
+            return User.find().populate('reservations');
         },
 
         // Find User based on Username passed in
         user: async (username) => {
-            return User.findOne({ username });
+            return User.findOne({ username }).populate('reservations');
+        },
+
+        // Retrieve all Reservations
+        reservations: async () => {
+            return Reservation.find();
+        },
+
+        // Retrieve a Reservation based on the Reservation ID passed into it
+        reservation: async (parent, { reservationId }) => {
+            return Reservation.findOne({ _id: reservationId });
+        },
+
+        // Retrieve all Bookings
+        bookings: async () => {
+            return Booking.find();
+        },
+
+        // Return a specific Booking based on the Booking ID
+        booking: async (parent, { bookingId }) => {
+            return Booking.findOne({ _id: bookingId });
         }
     },
 

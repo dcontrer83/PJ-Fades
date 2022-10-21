@@ -39,7 +39,6 @@ const typeDefs = gql`
         reservation(reservationId: ID!): Reservation
         bookings: [Booking]
         booking(bookingId: ID!): Booking
-        me: User
     }
 
     type Mutation {
@@ -47,7 +46,7 @@ const typeDefs = gql`
         login(email: String!, password: String!): Auth
         createReservation(type: String!, comments: String!, price: Number!, date: Date!, creater: User!, isApproved: Boolean!!): Reservation
         bookReservation(eventId: ID!): Booking
-        cancelBooking(bookingId: ID!)
+        cancelBooking(bookingId: ID!): Reservation
     }
 
 `;

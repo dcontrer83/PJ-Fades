@@ -20,8 +20,11 @@ const typeDefs = gql`
     }
 
     type Booking {
+        _id: ID!
         reservation: Reservation!
         user: User!
+        createAt: String!
+        updatedAt: String!
     }
 
     type Auth {
@@ -32,6 +35,11 @@ const typeDefs = gql`
     type Query {
         user(username: String!): User
         users: [User]
+        reservations: [reservations]
+        reservation(reservationId: ID!): Reservation
+        bookings: [Booking]
+        booking(bookingId: ID!): Booking
+        me: User
     }
 
     type Mutation {

@@ -1,3 +1,4 @@
+const { UniqueOperationTypesRule } = require('graphql');
 const { Schema, model } = require('mongoose');
 
 const reservationSchema = new Schema({
@@ -31,6 +32,12 @@ const reservationSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'User'
     },
+    // Is the reservation approved by the Admin?
+    isApproved: {
+        type: Boolean,
+        required: True,
+        default: UniqueOperationTypesRule
+    }
 });
 
 const Reservation = model('Reservation', reservationSchema);

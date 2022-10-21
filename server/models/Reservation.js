@@ -8,15 +8,11 @@ const reservationSchema = new Schema({
         required: True
     },
     // Comments made by the User
-    comments: [
-        {
-            commentText: {
-                type: String,
-                minlength: 1,
-                maxLength: 280
-            },
-        }
-    ],
+    comments: {
+        type: String,
+        minlength: 1,
+        maxLength: 280
+    },
     // Price of the service
     price: {
         type: Number,

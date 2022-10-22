@@ -11,7 +11,8 @@ function Header(props) {
   const style = {
     container: {
         margin: "0",
-        maxWidth: "100%"
+        maxWidth: "100%",
+        fontColor: "white",
     },
     image: {
         width: "92px",
@@ -25,7 +26,7 @@ function Header(props) {
   }
 
   return (
-    <Navbar bg="light" expand="sm">
+    <Navbar className="fixed-top" bg="light" expand="sm">
       <Container style={style.container}>
         <Navbar.Brand href="/">𝐏𝐉-𝐅𝐀𝐃𝐄𝐒</Navbar.Brand>
         <img src={logo} alt="logo" style={style.image}></img>

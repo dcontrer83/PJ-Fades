@@ -23,7 +23,7 @@ const typeDefs = gql`
         _id: ID
         reservation: Reservation
         user: User
-        createAt: String
+        createdAt: String
         updatedAt: String
     }
 

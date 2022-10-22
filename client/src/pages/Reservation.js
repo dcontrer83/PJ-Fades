@@ -32,6 +32,8 @@ const Reservation = (props) => {
 
     // form submit handler
     const handleFormSubmit = async (event) => {
-        event.preventDefault
+        event.preventDefault;
+
+
     }
 }

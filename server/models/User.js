@@ -19,7 +19,13 @@ const userSchema = new Schema({
         required: true,
         minLength: 5,
         maxLength: 28
-    }
+    },
+    reservations: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'Reservation'
+        }
+    ]
 });
 
 // set up pre-save middleware to create password

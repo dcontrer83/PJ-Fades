@@ -1,2 +1,5 @@
 const User = require('./User');
-module.exports = User;
+const Reservation = require('./Reservation');
+const Booking = require('./Booking');
+
+module.exports = { User, Reservation, Booking };

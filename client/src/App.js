@@ -9,7 +9,7 @@ import { setContext } from '@apollo/client/link/context';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-// import Contact from './pages/Contact'
+import Contact from './pages/Contact'
 // import Gallery from './pages/Gallery'
 import Home from './pages/Home'
 import Header from './components/Header'
@@ -50,6 +50,11 @@ function App() {
                 path="/" 
                 element={<Home />} 
             />
+            <Route
+                path="/contact"
+                element={<Contact />}
+            >  
+            </Route>
           </Routes>
           <Footer />
         </div>

@@ -12,7 +12,7 @@ const Footer = () => {
             marginTop: "30px"
         },
         box: {
-            height: "15vh"
+            height: "125px"
         },
         misc: {
             marginTop: "30px"

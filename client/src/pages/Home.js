@@ -32,10 +32,7 @@ const Home = () => {
             height: "70vh"
         },
         sampleHeight1: {
-            height: "90vh"
-        },
-        sampleHeight2: {
-            height: "20vh"
+            height: "500px"
         },
         sampleBox1: {
             width: "100%",
@@ -46,8 +43,8 @@ const Home = () => {
             padding: "0 5% 0 5%",
         },
         placeholder: {
-            height: "200px",
-            width: "200px"
+            height: "60%",
+            width: "25%"
         }
     }
 
@@ -65,7 +62,7 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-            <div className="container mt-5 d-flex flex-column-reverse flex-lg-row align-item-center shadow p-3 mb-5 bg-body rounded" style={style.sampleStyle}>
+            <div className="container mt-5 d-flex flex-column-reverse flex-lg-row align-item-center shadow p-3 mb-5 bg-body rounded" style={style.sampleHeight}>
                 <div className="bg-image shadow p-3 mb-5 bg-body rounded" style={style.hero2}></div>
                 <div className="text-center" style={style.sampleBox1}>
                     <div style={style.sampleContent}>
@@ -76,19 +73,14 @@ const Home = () => {
             </div>
             <div className="text-center bg-dark text-white d-flex flex-column" style={style.sampleHeight1}>
                 <div className='container'>
-                    <h1 className='align-item-center mt-5'>About me or My story?</h1>
+                    <h1 className='mt-3'>About me or My story?</h1>
                     <img className='border border-light mt-3' src={placeholder} alt="Placeholder" style={style.placeholder}></img>
                 </div>
                 <div className='container'>
-                    <p className='align-item-center mt-5'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    <p className='mt-3'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                     </p>
                 </div>
             </div>
-            <div className="mt-5 bg-secondary text-white" style={style.sampleHeight2}>
-                
-                </div>
         </main>
     )
 };

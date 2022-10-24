@@ -32,8 +32,33 @@ const Reservation = (props) => {
 
     // form submit handler
     const handleFormSubmit = async (event) => {
-        event.preventDefault;
+        event.preventDefault();
+        try {
+            // Create the Reservation
+            const { data } = await createReservation({
+                variables: {
+                    type: formState.type,
+                    comments: formState.comments,
+                    price: formState.price,
+                    date: new Date(Date.now()).toIsoString()
+                }
+            });
 
-
+            // Then, reset the form state
+            setFormState({
+                type: '',
+                comments: '',
+                price: '',
+                date: ''
+            });
+        } catch (err) {
+            throw err;
+        }
     }
+
+    return (
+        <div>
+            <h2>Create a Reservation!</h2>
+        </div>
+    )
 }

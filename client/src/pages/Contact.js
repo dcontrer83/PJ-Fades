@@ -12,11 +12,18 @@ const Contact = () => {
     })
 
     const style = {
+        offset: {
+            height: "93px"
+        },
         main: {
             height: "100%"
         },
         misc: {
-            marginTop: "10%"
+            marginTop: "40px",
+            marginBottom: "50px"
+        },
+        sendTitle: {
+            padding: "25px"
         },
         formBox: {
             height: "500px",
@@ -41,6 +48,7 @@ const Contact = () => {
     }
     return (
         <main>
+            <div style={style.offset}></div>
             <div style={style.main}>
                 <div className='text-center' style={style.misc}>
                     <h1>Contact</h1>
@@ -49,10 +57,10 @@ const Contact = () => {
                     <p>Instagram: </p>
                 </div>
                 <div className='bg-dark text-white mx-auto' style={style.formBox}>
-                    <h2 className='text-center mt-5'>Send a Message!</h2>
+                    <h2 className='text-center mb-0' style={style.sendTitle}>Send a Message!</h2>
                     <Form className='mx-auto' style={style.formBox2} onSubmit={handleSubmit}>
                         <Form.Group className='mb-3' controlId='contact-form-name'>
-                            <Form.Label className='mt-5'>Full Name:</Form.Label>
+                            <Form.Label className='mt-3'>Full Name:</Form.Label>
                             <Form.Control 
                             type="text" 
                             name="fullname"

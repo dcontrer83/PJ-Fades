@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { CREATE_RESERVATION } from '../utils/mutations';
+import Auth from '../utils/auth';
 
 /*
 type --> select --> cut/beard/etc
@@ -59,6 +60,14 @@ const Reservation = (props) => {
     return (
         <div>
             <h2>Create a Reservation!</h2>
+
+            {/* If the user is logged in, render the Reservation Form */}
+            {Auth.loggedIn() ? (
+                <>
+                </>
+            ) : (
+                <p>Please Log in to create a reservation!</p>
+            )}
         </div>
-    )
-}
+    );
+};

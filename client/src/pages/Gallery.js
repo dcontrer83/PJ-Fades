@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {useMediaQuery} from 'react-responsive'
+import {motion} from 'framer-motion'
 // either import image from a folder
 // import imageTest1 from '../img/imgTest1.png';
 import images from '../images'
@@ -70,19 +71,19 @@ const Gallery = () => {
                     </div>
                     <div className='d-flex flex-row bg-light' style={isLaptop ? style.content1 : style.content2}>
                         <Row className='text-center mt-3' sm={1}  >
-                            <Col><img src={images[0]} style={style.pics} onClick={() => handleClick(0)} alt="hero"></img></Col>
-                            <Col><img src={images[1]} style={style.pics} onClick={() => handleClick(1)} alt="hero"></img></Col>
-                            <Col><img src={images[2]} style={style.pics} onClick={() => handleClick(2)} alt="hero"></img></Col>
+                            <Col><motion.img whileHover={{scale:1.1}} src={images[0]} style={style.pics} onClick={() => handleClick(0)} alt="hero"></motion.img></Col>
+                            <Col><motion.img whileHover={{scale:1.1}} src={images[1]} style={style.pics} onClick={() => handleClick(1)} alt="hero"></motion.img></Col>
+                            <Col><motion.img whileHover={{scale:1.1}} src={images[2]} style={style.pics} onClick={() => handleClick(2)} alt="hero"></motion.img></Col>
                         </Row>
                         <Row className='text-center mt-3' sm={1} >
-                            <Col><img src={images[3]} style={style.pics} onClick={() => handleClick(3)} alt="hero"></img></Col>
-                            <Col><img src={images[4]} style={style.pics} onClick={() => handleClick(4)} alt="hero"></img></Col>
-                            <Col><img src={images[5]} style={style.pics} onClick={() => handleClick(5)} alt="hero"></img></Col>
+                            <Col><motion.img whileHover={{scale:1.1}} src={images[3]} style={style.pics} onClick={() => handleClick(3)} alt="hero"></motion.img></Col>
+                            <Col><motion.img whileHover={{scale:1.1}} src={images[4]} style={style.pics} onClick={() => handleClick(4)} alt="hero"></motion.img></Col>
+                            <Col><motion.img whileHover={{scale:1.1}} src={images[5]} style={style.pics} onClick={() => handleClick(5)} alt="hero"></motion.img></Col>
                         </Row>
                         <Row className='text-center mt-3' sm={1}>
-                            <Col><img src={images[6]} style={style.pics} onClick={() => handleClick(6)} alt="hero"></img></Col>
-                            <Col><img src={images[7]} style={style.pics} onClick={() => handleClick(7)} alt="hero"></img></Col>
-                            <Col><img src={images[8]} style={style.pics} onClick={() => handleClick(8)}alt="hero"></img></Col>
+                            <Col><motion.img whileHover={{scale:1.1}} src={images[6]} style={style.pics} onClick={() => handleClick(6)} alt="hero"></motion.img></Col>
+                            <Col><motion.img whileHover={{scale:1.1}} src={images[7]} style={style.pics} onClick={() => handleClick(7)} alt="hero"></motion.img></Col>
+                            <Col><motion.img whileHover={{scale:1.1}} src={images[8]} style={style.pics} onClick={() => handleClick(8)}alt="hero"></motion.img></Col>
                         </Row>
                     </div>
                 </div>

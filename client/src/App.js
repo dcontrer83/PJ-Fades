@@ -10,7 +10,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Contact from './pages/Contact'
-// import Gallery from './pages/Gallery'
+import Gallery from './pages/Gallery'
 import Home from './pages/Home'
 import Header from './components/Header'
 import Footer from './components/Footer'
@@ -55,6 +55,12 @@ function App() {
                 element={<Contact />}
             >  
             </Route>
+            <Route
+                path="/gallery"
+                element={<Gallery />}
+            >
+            </Route>
+
           </Routes>
           <Footer />
         </div>

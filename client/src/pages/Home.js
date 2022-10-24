@@ -1,8 +1,8 @@
 import React from 'react';
 
-import image from '../images/DSC01193.jpg'
-import hero from '../images/Hero-Gallery.PNG'
-import placeholder from "../images/placeholder-image.png"
+import image from '../images/gallery/DSC01193.jpg'
+import hero from '../images/gallery/Hero-Gallery.PNG'
+import placeholder from "../images/placeholder/placeholder-image.png"
 const Home = () => {
 
     const style = {

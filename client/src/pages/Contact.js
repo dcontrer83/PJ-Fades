@@ -28,7 +28,7 @@ const Contact = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
+        //send it to database or send it through email?
     }
 
     const handleInputChange = (e) => {

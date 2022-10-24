@@ -32,7 +32,7 @@ const reservationSchema = new Schema({
     isApproved: {
         type: Boolean,
         required: true,
-        default: UniqueOperationTypesRule
+        default: true
     }
 });
 

@@ -1,73 +1,25 @@
-import React from 'react';
-import {
-  ApolloClient,
-  InMemoryCache,
-  ApolloProvider,
-  createHttpLink,
-} from '@apollo/client';
-import { setContext } from '@apollo/client/link/context';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import 'bootstrap/dist/css/bootstrap.min.css';
-
-import Contact from './pages/Contact'
-import Gallery from './pages/Gallery'
-import Home from './pages/Home'
-import Header from './components/Header'
-import Footer from './components/Footer'
-// import Login from './pages/Login'
-// import Signup from './pages/Signup';
-
-//graphql endpoint
-const httpLink = createHttpLink({
-  uri: '/graphql',
-});
-
-//Sets the authorization header for each request, gets the JWT and appends it to the header
-const authLink = setContext((_, { headers }) => {
-  const token = localStorage.getItem('id_token');
-  return {
-    headers: {
-      ...headers,
-      authorization: token ? `Bearer ${token}` : '',
-    },
-  };
-});
-
-const client = new ApolloClient({
-  // Set up our client to execute the `authLink` middleware prior to making the request to our GraphQL API
-  link: authLink.concat(httpLink),
-  cache: new InMemoryCache(),
-});
+import logo from './logo.svg';
+import './App.css';
 
 function App() {
   return (
-    <ApolloProvider client={client}>
-      <Router>
-        <div className="flex-column justify-flex-start min-100-vh">
-          <Header />
-          <Routes>
-            <Route 
-                path="/" 
-                element={<Home />} 
-            />
-            <Route
-                path="/contact"
-                element={<Contact />}
-            >  
-            </Route>
-            <Route
-                path="/gallery"
-                element={<Gallery />}
-            >
-            </Route>
-
-          </Routes>
-          <Footer />
-        </div>
-      </Router>
-    </ApolloProvider>
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
   );
 }
 
 export default App;
-

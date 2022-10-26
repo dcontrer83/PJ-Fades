@@ -1,6 +1,6 @@
 import { gql } from '@apollo/client';
 
-export const ADD_USER = gql`
+export const ADD_PROFILE = gql`
 mutation addUser($username: String!, $email: String!, $password: String) {
     addUser(username: $username, email: $email, password: $password) {
         token
@@ -31,8 +31,8 @@ export const CREATE_RESERVATION = gql`
                 _id
                 type
                 comments
-                price
                 date
+                time
                 isApproved
             }
         }
@@ -46,8 +46,8 @@ export const DELETE_RESERVATION = gql`
                 _id
                 type
                 comments
-                price
                 date
+                time
                 isApproved
             }
         }
@@ -65,8 +65,8 @@ export const CREATE_BOOKING = gql`
                     _id
                     type
                     comments
-                    price
                     date
+                    time
                 }
                 user {
                     _id

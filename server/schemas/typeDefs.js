@@ -13,8 +13,8 @@ const typeDefs = gql`
         _id: ID
         type: String
         comments: String
-        price: Int
         date: String
+        time: String
         user: User!
         isApproved: Boolean
     }
@@ -34,9 +34,9 @@ const typeDefs = gql`
 
     input ReservationInput {
         type: String!
+        date: String!
+        time: String!
         comments: String!
-        price: Int
-        date: String
     }
 
     type Query {

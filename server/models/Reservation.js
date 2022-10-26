@@ -13,9 +13,9 @@ const reservationSchema = new Schema({
         minlength: 1,
         maxLength: 280
     },
-    // Price of the service
-    price: {
-        type: Number,
+    // Time Selected of the service
+    time: {
+        type: String,
         required: true
     },
     // Date selected for the Service
@@ -32,7 +32,7 @@ const reservationSchema = new Schema({
     isApproved: {
         type: Boolean,
         required: true,
-        default: UniqueOperationTypesRule
+        default: true
     }
 });
 

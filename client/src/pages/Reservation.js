@@ -15,6 +15,18 @@ const Reservation = (props) => {
         date: ''
     });
 
+    const style = {
+        offset: {
+            height: "93px"
+        },
+        main: {
+            height: "100%"
+        },
+        formBox2: {
+            width: "60%"
+        }
+    }
+
     // mutation for creating a reservation
     const [createReservation, { error, data }] = useMutation(CREATE_RESERVATION);
 
@@ -37,8 +49,7 @@ const Reservation = (props) => {
                 variables: {
                     type: formState.type,
                     comments: formState.comments,
-                    price: formState.price,
-                    date: new Date(Date.now()).toIsoString()
+                    date: new Date(formState.date).toIsoString()
                 }
             });
 
@@ -55,21 +66,39 @@ const Reservation = (props) => {
 
     return (
         <main>
-            <div>
+            <div style={style.main} className='mt-5'>
                 <h2>Create a Reservation!</h2>
                 {/* If the user is logged in, render the Reservation Form */}
-                {Auth.loggedIn() ? (
-                    <>
-                        <form>
-                            <div className='form-group'>
-
-                            </div>
-                        </form>
-                    </>
-                ) : (
-                    <p>Please Log in to create a reservation!</p>
-                )}
+                <Form className='mx-auto' style={style.formBox2}>
+                    <Form.Group className='m-2'>
+                        <Form.Label className='mt-3'>Please Select a Service:</Form.Label>
+                        <Form.Select
+                            name="type"
+                            value={formState.type}
+                            onChange={handleChange}
+                        >
+                            <option>Kid's Cut - $40</option>
+                            <option>Men's Cut - $50</option>
+                            <option>Cut and Beard - $65</option>
+                            <option>Beard - $20</option>
+                            <option>Lineup - $15</option>
+                            <option>Blonde Session - $150</option>
+                        </Form.Select>
+                    </Form.Group>
+                    <Form.Group className='m-2'>
+                        <Form.Label className='mt-2'>Select A Date</Form.Label>
+                        <Form.Control
+                            type="date"
+                            name="date"
+                            value={formState.date}
+                            onChange={handleChange}
+                        >
+                        </Form.Control>
+                    </Form.Group>
+                </Form>
             </div>
         </main>
     );
 };
+
+export default Reservation;

@@ -16,6 +16,7 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import Login from './pages/Login'
 import Signup from './pages/Signup';
+import Reservation from './pages/Reservation'
 
 //graphql endpoint
 const httpLink = createHttpLink({
@@ -60,7 +61,11 @@ function App() {
               element={<Gallery />}
             >
             </Route>
-
+            <Route
+              path="/reservation"
+              element={<Reservation />}
+            >
+            </Route>
           </Routes>
           <Footer />
         </div>

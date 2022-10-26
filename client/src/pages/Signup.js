@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import { useMutation } from '@apollo/client';
-// need to create ADD_PROFILE mutation
 import { ADD_PROFILE } from '../utils/mutations';
 
 import Auth from '../utils/auth';

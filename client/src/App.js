@@ -14,8 +14,8 @@ import Gallery from './pages/Gallery'
 import Home from './pages/Home'
 import Header from './components/Header'
 import Footer from './components/Footer'
-// import Login from './pages/Login'
-// import Signup from './pages/Signup';
+import Login from './pages/Login'
+import Signup from './pages/Signup';
 
 //graphql endpoint
 const httpLink = createHttpLink({
@@ -46,18 +46,18 @@ function App() {
         <div className="flex-column justify-flex-start min-100-vh">
           <Header />
           <Routes>
-            <Route 
-                path="/" 
-                element={<Home />} 
+            <Route
+              path="/"
+              element={<Home />}
             />
             <Route
-                path="/contact"
-                element={<Contact />}
-            >  
+              path="/contact"
+              element={<Contact />}
+            >
             </Route>
             <Route
-                path="/gallery"
-                element={<Gallery />}
+              path="/gallery"
+              element={<Gallery />}
             >
             </Route>
 

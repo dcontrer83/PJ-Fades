@@ -32,6 +32,7 @@ export const CREATE_RESERVATION = gql`
                 type
                 comments
                 date
+                time
                 isApproved
             }
         }
@@ -46,6 +47,7 @@ export const DELETE_RESERVATION = gql`
                 type
                 comments
                 date
+                time
                 isApproved
             }
         }
@@ -64,6 +66,7 @@ export const CREATE_BOOKING = gql`
                     type
                     comments
                     date
+                    time
                 }
                 user {
                     _id

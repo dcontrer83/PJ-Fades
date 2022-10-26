@@ -12,7 +12,8 @@ const Reservation = (props) => {
     const [formState, setFormState] = useState({
         type: '',
         comments: '',
-        date: ''
+        date: '',
+        time: '',
     });
 
     const style = {
@@ -49,7 +50,8 @@ const Reservation = (props) => {
                 variables: {
                     type: formState.type,
                     comments: formState.comments,
-                    date: new Date(formState.date).toIsoString()
+                    date: new Date(formState.date).toIsoString(),
+                    time: formState.time
                 }
             });
 
@@ -57,7 +59,8 @@ const Reservation = (props) => {
             setFormState({
                 type: '',
                 comments: '',
-                date: ''
+                date: '',
+                time: ''
             });
         } catch (err) {
             throw err;

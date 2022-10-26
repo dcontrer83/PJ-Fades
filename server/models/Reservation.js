@@ -13,6 +13,11 @@ const reservationSchema = new Schema({
         minlength: 1,
         maxLength: 280
     },
+    // Price of the service
+    time: {
+        type: String,
+        required: true
+    },
     // Date selected for the Service
     date: {
         type: Date,

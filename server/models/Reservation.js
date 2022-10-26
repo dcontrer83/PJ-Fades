@@ -13,7 +13,7 @@ const reservationSchema = new Schema({
         minlength: 1,
         maxLength: 280
     },
-    // Price of the service
+    // Time Selected of the service
     time: {
         type: String,
         required: true

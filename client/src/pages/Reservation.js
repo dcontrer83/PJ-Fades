@@ -25,6 +25,9 @@ const Reservation = (props) => {
         },
         formBox2: {
             width: "55%"
+        },
+        loginErr: {
+            color: "#9e2a2b"
         }
     }
 
@@ -73,66 +76,111 @@ const Reservation = (props) => {
             <div style={style.main} className='mt-5'>
                 <h2 className='text-center'>Create a Reservation</h2>
                 {/* If the user is logged in, render the Reservation Form */}
-                <Form className='mx-auto' style={style.formBox2}>
-                    <Form.Group className='mt-2'>
-                        <Form.Label className='mt-3'>Select a Service:</Form.Label>
-                        <Form.Select
-                            name="type"
-                            value={formState.type}
-                            onChange={handleChange}
-                        >
-                            <option>Kid's Cut - $40</option>
-                            <option>Men's Cut - $50</option>
-                            <option>Cut and Beard - $65</option>
-                            <option>Beard - $20</option>
-                            <option>Lineup - $15</option>
-                            <option>Blonde Session - $150</option>
-                        </Form.Select>
-                    </Form.Group>
-                    <Form.Group className='mt-2'>
-                        <Form.Label className='mt-2'>Select A Date:</Form.Label>
-                        <Form.Control
-                            type="date"
-                            name="date"
-                            value={formState.date}
-                            onChange={handleChange}
-                        >
-                        </Form.Control>
-                    </Form.Group>
-                    <Form.Group className='mt-2'>
-                        <Form.Label className='mt-3'>Select a Time:</Form.Label>
-                        <Form.Select
-                            name="time"
-                            value={formState.time}
-                            onChange={handleChange}
-                        >
-                            <option>9 AM</option>
-                            <option>10 AM</option>
-                            <option>11 AM</option>
-                            <option>12 AM</option>
-                            <option>1 PM</option>
-                            <option>2 PM</option>
-                            <option>3 PM</option>
-                            <option>4 PM</option>
-                            <option>5 PM</option>
-                            <option>6 PM</option>
-                            <option>7 PM</option>
-                        </Form.Select>
-                    </Form.Group>
-                    <Form.Group className='mt-2'>
-                        <Form.Label className='mt-2'>Please enter any comments you wish to add:</Form.Label>
-                        <Form.Control
-                            as='textarea'
-                            name='comments'
-                            value={formState.value}
-                            onChange={handleChange}
-                            rows={4}
-                        ></Form.Control>
-                    </Form.Group>
-                    <Button type="submit" className='mt-2 mb-5'>
-                        Submit
-                    </Button>
-                </Form>
+                {Auth.loggedIn() ? (
+                    <Form className='mx-auto' style={style.formBox2}>
+                        <Form.Group className='mt-2'>
+                            <Form.Label className='mt-3'>Select a Service:</Form.Label>
+                            <Form.Select
+                                name="type"
+                                value={formState.type}
+                                onChange={handleChange}
+                            >
+                                <option>Kid's Cut - $40</option>
+                                <option>Men's Cut - $50</option>
+                                <option>Cut and Beard - $65</option>
+                                <option>Beard - $20</option>
+                                <option>Lineup - $15</option>
+                                <option>Blonde Session - $150</option>
+                            </Form.Select>
+                        </Form.Group>
+                        <Form.Group className='mt-2'>
+                            <Form.Label className='mt-2'>Select A Date:</Form.Label>
+                            <Form.Control
+                                type="date"
+                                name="date"
+                                value={formState.date}
+                                onChange={handleChange}
+                            >
+                            </Form.Control>
+                        </Form.Group>
+                        <Form.Group className='mt-2'>
+                            <Form.Label className='mt-3'>Select a Time:</Form.Label>
+                            <Form.Select
+                                name="time"
+                                value={formState.time}
+                                onChange={handleChange}
+                            >
+                                <option>9 AM</option>
+                                <option>10 AM</option>
+                                <option>11 AM</option>
+                                <option>12 AM</option>
+                                <option>1 PM</option>
+                                <option>2 PM</option>
+                                <option>3 PM</option>
+                                <option>4 PM</option>
+                                <option>5 PM</option>
+                                <option>6 PM</option>
+                                <option>7 PM</option>
+                            </Form.Select>
+                        </Form.Group>
+                        <Form.Group className='mt-2'>
+                            <Form.Label className='mt-2'>Please enter any comments you wish to add:</Form.Label>
+                            <Form.Control
+                                as='textarea'
+                                name='comments'
+                                value={formState.value}
+                                onChange={handleChange}
+                                rows={4}
+                            ></Form.Control>
+                        </Form.Group>
+                        <Button type="submit" className='mt-2 mb-5'>
+                            Submit
+                        </Button>
+                    </Form>
+                ) : (
+                    <>
+                        <h3 className='text-center mt-5' style={style.loginErr}>Please login to create a reservation!</h3>
+                        <Form className='mx-auto' style={style.formBox2}>
+                            <Form.Group className='mt-1'>
+                                <Form.Label className='mt-3'>Select a Service:</Form.Label>
+                                <Form.Select
+                                    disabled
+                                >
+                                    <option>Kid's Cut - $40</option>
+                                </Form.Select>
+                            </Form.Group>
+                            <Form.Group className='mt-1'>
+                                <Form.Label className='mt-2'>Select A Date:</Form.Label>
+                                <Form.Control
+                                    type="date"
+                                    disabled
+                                >
+                                </Form.Control>
+                            </Form.Group>
+                            <Form.Group className='mt-1'>
+                                <Form.Label className='mt-3'>Select a Time:</Form.Label>
+                                <Form.Select
+                                    name="time"
+                                    disabled
+                                >
+                                    <option>9 AM</option>
+                                </Form.Select>
+                            </Form.Group>
+                            <Form.Group className='mt-2'>
+                                <Form.Label className='mt-2'>Please enter any comments you wish to add:</Form.Label>
+                                <Form.Control
+                                    as='textarea'
+                                    disabled
+                                    rows={4}
+                                ></Form.Control>
+                            </Form.Group>
+                            <Button type="submit" className='mt-2 mb-5' disabled>
+                                Submit
+                            </Button>
+                        </Form>
+                    </>
+                )}
+
             </div>
         </main>
     );

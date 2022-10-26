@@ -23,7 +23,7 @@ const Reservation = (props) => {
             height: "100%"
         },
         formBox2: {
-            width: "60%"
+            width: "55%"
         }
     }
 
@@ -66,12 +66,13 @@ const Reservation = (props) => {
 
     return (
         <main>
+            <div style={style.offset}></div>
             <div style={style.main} className='mt-5'>
-                <h2>Create a Reservation!</h2>
+                <h2 className='text-center'>Create a Reservation</h2>
                 {/* If the user is logged in, render the Reservation Form */}
                 <Form className='mx-auto' style={style.formBox2}>
-                    <Form.Group className='m-2'>
-                        <Form.Label className='mt-3'>Please Select a Service:</Form.Label>
+                    <Form.Group className='mt-2'>
+                        <Form.Label className='mt-3'>Select a Service:</Form.Label>
                         <Form.Select
                             name="type"
                             value={formState.type}
@@ -85,8 +86,8 @@ const Reservation = (props) => {
                             <option>Blonde Session - $150</option>
                         </Form.Select>
                     </Form.Group>
-                    <Form.Group className='m-2'>
-                        <Form.Label className='mt-2'>Select A Date</Form.Label>
+                    <Form.Group className='mt-2'>
+                        <Form.Label className='mt-2'>Select A Date:</Form.Label>
                         <Form.Control
                             type="date"
                             name="date"
@@ -95,6 +96,39 @@ const Reservation = (props) => {
                         >
                         </Form.Control>
                     </Form.Group>
+                    <Form.Group className='mt-2'>
+                        <Form.Label className='mt-3'>Select a Time:</Form.Label>
+                        <Form.Select
+                            name="time"
+                            value={formState.time}
+                            onChange={handleChange}
+                        >
+                            <option>9 AM</option>
+                            <option>10 AM</option>
+                            <option>11 AM</option>
+                            <option>12 AM</option>
+                            <option>1 PM</option>
+                            <option>2 PM</option>
+                            <option>3 PM</option>
+                            <option>4 PM</option>
+                            <option>5 PM</option>
+                            <option>6 PM</option>
+                            <option>7 PM</option>
+                        </Form.Select>
+                    </Form.Group>
+                    <Form.Group className='mt-2'>
+                        <Form.Label className='mt-2'>Please enter any comments you wish to add:</Form.Label>
+                        <Form.Control
+                            as='textarea'
+                            name='comments'
+                            value={formState.value}
+                            onChange={handleChange}
+                            rows={4}
+                        ></Form.Control>
+                    </Form.Group>
+                    <Button type="submit" className='mt-2 mb-5'>
+                        Submit
+                    </Button>
                 </Form>
             </div>
         </main>

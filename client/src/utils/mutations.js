@@ -31,7 +31,6 @@ export const CREATE_RESERVATION = gql`
                 _id
                 type
                 comments
-                price
                 date
                 isApproved
             }
@@ -46,7 +45,6 @@ export const DELETE_RESERVATION = gql`
                 _id
                 type
                 comments
-                price
                 date
                 isApproved
             }
@@ -65,7 +63,6 @@ export const CREATE_BOOKING = gql`
                     _id
                     type
                     comments
-                    price
                     date
                 }
                 user {

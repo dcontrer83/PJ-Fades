@@ -4,17 +4,11 @@ import { useMutation } from '@apollo/client';
 import { CREATE_RESERVATION } from '../utils/mutations';
 import Auth from '../utils/auth';
 
-/*
-type --> select --> cut/beard/etc
-comments --> text field
-*/
-
 const Reservation = (props) => {
     // get and set state for type, comments, price, and dates
     const [formState, setFormState] = useState({
         type: '',
         comments: '',
-        price: '',
         date: ''
     });
 
@@ -49,7 +43,6 @@ const Reservation = (props) => {
             setFormState({
                 type: '',
                 comments: '',
-                price: '',
                 date: ''
             });
         } catch (err) {
@@ -64,6 +57,12 @@ const Reservation = (props) => {
             {/* If the user is logged in, render the Reservation Form */}
             {Auth.loggedIn() ? (
                 <>
+                    <form>
+                        <div className='form-group'>
+
+                        </div>
+
+                    </form>
                 </>
             ) : (
                 <p>Please Log in to create a reservation!</p>

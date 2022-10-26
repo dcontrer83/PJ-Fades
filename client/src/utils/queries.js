@@ -10,7 +10,6 @@ export const QUERY_USERS = gql`
                 _id
                 type
                 comments
-                price
                 date
                 isApproved
             }
@@ -28,7 +27,6 @@ export const QUERY_SINGLE_USER = gql`
                 _id
                 type
                 comments
-                price
                 date
                 isApproved
             }
@@ -42,7 +40,6 @@ export const QUERY_RESERVATIONS = gql`
             _id
             type
             comments
-            price
             date
             isApproved
         }
@@ -53,8 +50,8 @@ export const QUERY_SINGLE_RESERVATION = gql`
     query reservation($reservationId: ID!) {
         reservation(reservationId: $reservationId) {
             _id
-            typecomments
-            price
+            type
+            comments
             date
             isApproved
         }

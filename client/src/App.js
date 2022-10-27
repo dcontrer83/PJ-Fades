@@ -15,8 +15,9 @@ import Home from './pages/Home'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Login from './pages/Login'
-import Signup from './pages/Signup';
+import Signup from './pages/Signup'
 import Reservation from './pages/Reservation'
+import Profile from './pages/Profile'
 
 //graphql endpoint
 const httpLink = createHttpLink({
@@ -67,11 +68,16 @@ function App() {
             >
             </Route>
             <Route
+              path="/profile"
+              element={<Profile />}
+            >
+            </Route>
+            <Route
               path="/login"
               element={<Login />}
             >
             </Route>
-            <Route 
+            <Route
               path="/signup"
               element={<Signup />}
             >

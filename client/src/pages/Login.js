@@ -6,7 +6,25 @@ import { LOGIN_USER } from '../utils/mutations';
 
 import Auth from '../utils/auth';
 
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+
 const Login = (props) => {
+
+    const style = {
+        offset: {
+            height: "93px"
+        },
+        main: {
+            height: "100%"
+        },
+        formBox2: {
+            width: "55%"
+        },
+        loginErr: {
+            color: "#9e2a2b"
+        }
+    }
     // useState for email and password
     const [formState, setFormState] = useState({ email: '', password: '' });
     const [login, { error, data }] = useMutation(LOGIN_USER);
@@ -45,46 +63,59 @@ const Login = (props) => {
 
     return (
         <main>
-            <h2>Login</h2>
-            <div>
-                {data ? (
-                    <p>
-                        Login in successful!!! You may now head{' '}
-                        <Link to="/">back to tthe homepage.</Link>
-                    </p>
-                ) : (
-                    <form onSubmit={handleFormSubmit}>
-                        <input
-                            // className=""
-                            placeholder="Your email"
-                            name="email"
-                            type="email"
-                            value={formState.email}
-                            onChange={handleChange}
-                        />
-                        <input
-                            // className=""
-                            placeholder="********"
-                            name="password"
-                            type="password"
-                            value={formState.password}
-                            onChange={handleChange}
-                        />
-                        <button
-                            // className=""
-                            // style={{ cursor: 'pointer' }}
-                            type="submit"
-                        >
-                            Submit
-                        </button>
-                    </form>
-                )}
+            <div style={style.offset}></div>
+            <div style={style.main} className='mt-5'>
+                <h2 className='text-center'>Login</h2>
+                <div>
+                    {data ? (
+                        <p>
+                            Login in successful!!! You may now head{' '}
+                            <Link to="/">back to the homepage.</Link>
+                        </p>
+                    ) : (
+                        <main>
+                            <Form className='mx-auto' style={style.formBox2} onSubmit={handleFormSubmit}>
+                                <Form.Group className='mt-2'>
+                                    <Form.Label className='mt-3'>Email:</Form.Label>
+                                    <Form.Control
+                                        placeholder="Your email"
+                                        name="email"
+                                        type="email"
+                                        value={formState.email}
+                                        onChange={handleChange}
+                                    />
+                                </Form.Group>
 
-                {error && (
-                    <div>
-                        {error.message}
-                    </div>
-                )}
+                                <Form.Group className='mt-2'>
+                                    <Form.Label className='mt-2'>Password:</Form.Label>
+                                    <Form.Control
+                                        placeholder="********"
+                                        name="password"
+                                        type="password"
+                                        value={formState.password}
+                                        onChange={handleChange}
+                                    />
+                                </Form.Group>
+
+                                <Button
+                                    className='mt-2  mb-5'
+                                    type="submit"
+                                >
+                                    Submit
+                                </Button>
+                                <br></br>
+                                <Link to="/signup" className='text-center'>Sign up instead</Link>
+                            </Form>
+                            
+                        </main>
+                    )}
+
+                    {error && (
+                        <div>
+                            {error.message}
+                        </div>
+                    )}
+                </div>
             </div>
         </main>
     );

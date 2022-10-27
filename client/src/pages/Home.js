@@ -126,6 +126,7 @@ const Home = () => {
                         initial={ {opacity: 0} }
                         animate={{opacity: 1}} 
                         transition={{duration: 1.0}}
+                        viewport={{once: true}}
                         className="text-white">
                             <h1 className="mb-3" style={style.heroTitle}>Welcome to PJ-FADES</h1>
                             <h4 className="mb-3">Fresh Haircuts right to you~</h4>
@@ -139,6 +140,7 @@ const Home = () => {
             initial={{ y:-50, opacity: 0}}
             whileInView={{y: 0, opacity: 1 }}
             transition={{duration: 1.5}}
+            viewport={{once: true}}
             className="container mt-5 d-flex flex-column-reverse flex-lg-row align-item-center shadow p-3 mb-5 bg-body rounded" style={style.sampleHeight}>
                 <div className="bg-image shadow p-3 mb-5 bg-body rounded" style={style.hero2}></div>
                 <div className="text-center" style={style.sampleBox1}>
@@ -176,7 +178,7 @@ const Home = () => {
                         return (
                             <Accordion.Item eventKey={item.id}>
                                 <Accordion.Header style={style.listItems}>{item.service}</Accordion.Header>
-                                <Accordion.Body>${item.price}</Accordion.Body>
+                                <Accordion.Body className='text-center fs-3'>${item.price}</Accordion.Body>
                             </Accordion.Item>
                         )
                         })}
@@ -185,22 +187,28 @@ const Home = () => {
                 )
                 }
             </div>
-            <motion.div
-            initial={{x:-50, opacity: 0}}
-            whileInView={{x:0, opacity: 1}}
-            transition={{duration: 1.5}}
-             className="text-center bg-dark text-white d-flex flex-column flex-lg-row justify-content-center align-items-center" style={isLaptop ? style.sampleHeight1 : style.sampleHeightMobile}>
-                <div className='container' style={style.aboutMeBox}>
+            <div className="text-center bg-dark text-white d-flex flex-column flex-lg-row justify-content-center align-items-center" style={isLaptop ? style.sampleHeight1 : style.sampleHeightMobile}>
+                <motion.div
+                initial={{x:-50, opacity: 0}}
+                whileInView={{x:0, opacity: 1}}
+                transition={{duration: 1.5}}
+                viewport={{once: true}}
+                 className='container' style={style.aboutMeBox}>
                     <div>
                         <img className='border border-light' style={style.AboutMePic} src={selfImage} alt="PJ's pose"></img>
                     </div>
-                </div>
-                <div className='container d-flex flex-column justify-content-center align-items-center' style={style.aboutMeBox}>
+                </motion.div>
+                <motion.div 
+                initial={{x:-50, opacity: 0}}
+                whileInView={{x:0, opacity: 1}}
+                transition={{duration: 1.5}}
+                viewport={{once: true}}
+                className='container d-flex flex-column justify-content-center align-items-center' style={style.aboutMeBox}>
                     <h1 className='mb-3 mt-5'>About Me</h1>
                     <p>"Hello, my name is Patrick 'PJ' Ebba. I am a barber and I have cutting hair for about two years officially. I started cutting hair in high school actually but it was only myself and a handful of my friends. It all started in the garage of course and some trust that I would do a great job. All the practice of my friends led me to make it official so I decided to go to barber school. One year later, I graduated, took my test and started working in a barbershop that I was shadowing. Today, I am still cutting hair. I am currently doing house calls around town and I really love it because I can get more of a one on one experience. Follow your dreams. Aspire to inspire. One love."
                     </p>
-                </div>
-            </motion.div>
+                </motion.div>
+            </div>
         </main>
     )
 };

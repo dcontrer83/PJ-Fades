@@ -6,7 +6,6 @@ import Auth from '../utils/auth';
 
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { Reservation } from '../../../server/models';
 
 const Reservation = (props) => {
     // get and set state for type, comments, price, and dates

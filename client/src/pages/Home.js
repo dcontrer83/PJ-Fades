@@ -1,9 +1,54 @@
 import React from 'react';
-import {motion, useScroll} from 'framer-motion'
+import {motion} from 'framer-motion'
+import {useMediaQuery} from 'react-responsive'
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Accordion from 'react-bootstrap/Accordion';
 import image from '../images/gallery/DSC01193.jpg'
 import hero from '../images/gallery/Hero-Gallery.PNG'
 import placeholder from "../images/placeholder/placeholder-image.png"
 const Home = () => {
+
+    const isLaptop = useMediaQuery({query: '(min-width: 1024px)',})
+
+    const services = [
+        {
+            service: "Kids cuts under 11:",
+            price: 40,
+            id: 1
+        },
+        {
+            service: "Men's Cut: ",
+            price: 50,
+            id: 2
+        },
+        {
+            service: "Cut and beard:",
+            price: 65,
+            id: 3
+        },
+        {
+            service: "Beard:",
+            price: 20,
+            id: 4
+        },
+        {
+            service: "Line up:",
+            price: 15,
+            id: 5
+        },
+                {
+            service: "Military (on full amount):",
+            price: 5,
+            id: 6
+        },
+        {
+            service: "Blonde Sesh (short hair) starting price:",
+            price: 150,
+            id: 7
+        },
+
+    ]
 
     const style = {
         hero1: {
@@ -48,6 +93,18 @@ const Home = () => {
         },
         heroTitle: {
             fontSize: "65px"
+        },
+        serviceBox: {
+            listStyle: "none",
+            width: "100%",
+            height: "800px",
+            fontSize: "210%",
+            fontWeight: "bold",
+            marginBottom: "0%",
+            paddingLeft: "0%"
+        },
+        listItems: {
+            width: "100%",
         }
     }
 
@@ -82,6 +139,39 @@ const Home = () => {
                     </div>
                 </div>
             </motion.div>
+            <div>
+                {isLaptop ? (
+                <ul className='text-center mx-auto d-flex flex-column justify-content-evenly' style={style.serviceBox}>
+                    <Row sm={3} md={3} lg={3}>
+                        <Col><li style={style.listItems}>Kids cuts under 11:</li><span>$40</span></Col>
+                        <Col><li style={style.listItems}>Men's Cut:</li><span>$50</span></Col>
+                        <Col><li style={style.listItems}>Cut and beard:</li><span>$65</span></Col>
+                    </Row>
+                    <Row sm={3} md={3} lg={3}>
+                        <Col><li style={style.listItems}>Beard:</li><span>$20</span></Col>
+                        <Col><li style={style.listItems}>Line up:</li><span>$15</span></Col>
+                        <Col><li style={style.listItems}>Military (on full amount):</li><span>$5</span></Col>
+                    </Row>
+                    <Row sm={3} md={3} lg={3} className="justify-content-center">
+                        <Col><li style={style.listItems}>Blonde Sesh (short hair) starting price:</li><span>$150</span></Col>
+                    </Row>
+                </ul>
+                ) : (
+                <div>
+                    <Accordion>
+                        {services.map((item) => {
+                        return (
+                            <Accordion.Item eventKey={item.id}>
+                                <Accordion.Header style={style.listItems}>{item.service}</Accordion.Header>
+                                <Accordion.Body>${item.price}</Accordion.Body>
+                            </Accordion.Item>
+                        )
+                        })}
+                    </Accordion>
+                </div>
+                )
+                }
+            </div>
             <motion.div
             initial={{x:-50, opacity: 0}}
             whileInView={{x:0, opacity: 1}}

@@ -49,6 +49,7 @@ const Reservation = (props) => {
         event.preventDefault();
         try {
             // Create the Reservation
+            console.log(formState);
             const { data } = await createReservation({
                 variables: {
                     type: formState.type,

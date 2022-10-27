@@ -27,14 +27,12 @@ export const LOGIN_USER = gql`
 export const CREATE_RESERVATION = gql`
     mutation createReservation($reservationInput: ReservationInput!) {
         createReservation(reservationInput: $reservationInput) {
-            reservation {
-                _id
-                type
-                comments
-                date
-                time
-                isApproved
-            }
+            _id
+            type
+            comments
+            date
+            time
+            isApproved
         }
     }
 `;
@@ -42,14 +40,7 @@ export const CREATE_RESERVATION = gql`
 export const DELETE_RESERVATION = gql`
     mutation deleteReservation($reservationId: ID!) {
         deleteReservation(reservationId: $reservationId) {
-            reservation {
-                _id
-                type
-                comments
-                date
-                time
-                isApproved
-            }
+            _id
         }
     }
 `;

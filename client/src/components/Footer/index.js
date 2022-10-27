@@ -1,6 +1,6 @@
 import React from 'react'
 import {motion} from 'framer-motion'
-import { BsInstagram, BsTwitter, BsFacebook } from 'react-icons/bs'
+import { BsInstagram } from 'react-icons/bs'
 
 const Footer = () => {
 
@@ -22,11 +22,7 @@ const Footer = () => {
     return (
         <div className="text-center bg-secondary text-white align-items-center" style={style.box}>
             <div className='d-flex flex-row justify-content-center gap-4' >
-                <motion.a whileHover={{scale:1.2}} href="/"><BsInstagram style={style.icons}/></motion.a>
-                <div className="vr" style={style.misc}></div>
-                <motion.a whileHover={{scale:1.2}} href="/"><BsTwitter style={style.icons}/></motion.a>
-                <div className="vr" style={style.misc}></div>
-                <motion.a whileHover={{scale:1.2}} href="/"><BsFacebook style={style.icons}/></motion.a>
+                <motion.a whileHover={{scale:1.2}} href="https://instagram.com/pushnpj?igshid=YmMyMTA2M2Y=" target="_blank"><BsInstagram style={style.icons}/></motion.a>
             </div>
         </div>
     );

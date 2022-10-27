@@ -93,24 +93,17 @@ const resolvers = {
         createReservation: async (parent, { reservationInput }, context) => {
             try {
                 if (context.user) {
-                    const exists = await Reservation.findOne({
-                        date: reservationInput.date,
-                        time: reservationInput.time
-                    })
-                    if (exists) {
-                        throw new Error("Reservation already exists for that time!")
-                    } else {
-                        // Create the Reservation
-                        const reservationData = await Reservation.create(reservationInput);
+                    // Create the Reservation
+                    const reservationData = await Reservation.create(reservationInput);
 
-                        // Add the reservation to the User
-                        await User.findOneAndUpdate(
-                            { _id: context.user._id },
-                            { $addToSet: { reservations: reservationData._id } }
-                        );
+                    // Add the reservation to the User
+                    await User.findOneAndUpdate(
+                        { _id: context.user._id },
+                        { $addToSet: { reservations: reservationData._id } }
+                    );
 
-                        return reservationData;
-                    }
+                    console.log(reservationData);
+                    return reservationData;
                 }
             } catch (err) {
                 throw err;

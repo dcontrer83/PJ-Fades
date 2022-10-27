@@ -6,7 +6,13 @@ import Nav from 'react-bootstrap/Nav';
 
 import logo from '../../images/logo/logo.png'
 
+import Auth from '../../utils/auth';
+
 function Header(props) {
+  const logout = (event) => {
+    event.preventDefault();
+    Auth.logout();
+  }
 
   const style = {
     container: {
@@ -38,6 +44,15 @@ function Header(props) {
                 <Nav.Link href="/gallery">Gallery</Nav.Link>
                 <Nav.Link href="/contact">Contact</Nav.Link>
                 <Nav.Link href="/reservation">Reservation</Nav.Link>
+                {Auth.loggedIn() ? (
+                  // <button className="btn btn-lg btn-light m-2" onClick={logout}>
+                  // Logout
+                // </button>
+                  <Nav.Link href="/" onClick={logout}>Logout</Nav.Link>
+                ) : (
+                  <Nav.Link href="/login">Login</Nav.Link>
+                )}
+                {/* <Nav.Link href="/login">Login</Nav.Link> */}
             </Nav>
             </Navbar.Collapse>
         </Container>

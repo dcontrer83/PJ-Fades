@@ -42,6 +42,7 @@ const typeDefs = gql`
     type Query {
         user(username: String!): User
         users: [User]
+        profile: User
         reservations: [Reservation]
         reservation(reservationId: ID!): Reservation
         bookings: [Booking]

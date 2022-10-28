@@ -1,7 +1,7 @@
 import { gql } from '@apollo/client';
 
 export const ADD_USER = gql`
-mutation addUser($username: String!, $email: String!, $password: String) {
+mutation addUser($username: String!, $email: String!, $password: String!) {
     addUser(username: $username, email: $email, password: $password) {
         token
         user {
@@ -25,16 +25,14 @@ export const LOGIN_USER = gql`
 `;
 
 export const CREATE_RESERVATION = gql`
-    mutation createReservation($reservationInput: ReservationInput!) {
+    mutation createReservation($reservationInput: ReservationInput) {
         createReservation(reservationInput: $reservationInput) {
-            reservation {
-                _id
-                type
-                comments
-                price
-                date
-                isApproved
-            }
+            _id
+            type
+            comments
+            date
+            time
+            isApproved
         }
     }
 `;
@@ -42,14 +40,7 @@ export const CREATE_RESERVATION = gql`
 export const DELETE_RESERVATION = gql`
     mutation deleteReservation($reservationId: ID!) {
         deleteReservation(reservationId: $reservationId) {
-            reservation {
-                _id
-                type
-                comments
-                price
-                date
-                isApproved
-            }
+            _id
         }
     }
 `;
@@ -65,8 +56,8 @@ export const CREATE_BOOKING = gql`
                     _id
                     type
                     comments
-                    price
                     date
+                    time
                 }
                 user {
                     _id

@@ -18,6 +18,19 @@ const resolvers = {
             return User.findOne({ username }).populate('reservations');
         },
 
+        // Retrieve the profile of the user
+        profile: async (parent, args, context) => {
+            try {
+                if (context.user) {
+                    return User.findOne({ _id: context.user._id }).populate('reservations')
+                } else {
+                    throw new AuthenticationError('Must be logged in');
+                }
+            } catch (err) {
+                throw err;
+            }
+        },
+
         // Retrieve all Reservations
         reservations: async () => {
             return Reservation.find();
@@ -88,7 +101,7 @@ const resolvers = {
                         { _id: context.user._id },
                         { $addToSet: { reservations: reservationData._id } }
                     );
-
+                    console.log("server" + reservationData);
                     return reservationData;
                 }
             } catch (err) {

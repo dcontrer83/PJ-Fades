@@ -10,8 +10,8 @@ export const QUERY_USERS = gql`
                 _id
                 type
                 comments
-                price
                 date
+                time
                 isApproved
             }
         }
@@ -28,8 +28,26 @@ export const QUERY_SINGLE_USER = gql`
                 _id
                 type
                 comments
-                price
                 date
+                time
+                isApproved
+            }
+        }
+    }
+`;
+
+export const QUERY_PROFILE = gql`
+    query profile {
+        profile {
+            _id
+            username
+            email
+            reservations {
+                _id
+                type
+                comments
+                date
+                time
                 isApproved
             }
         }
@@ -42,8 +60,8 @@ export const QUERY_RESERVATIONS = gql`
             _id
             type
             comments
-            price
             date
+            time
             isApproved
         }
     }
@@ -53,9 +71,10 @@ export const QUERY_SINGLE_RESERVATION = gql`
     query reservation($reservationId: ID!) {
         reservation(reservationId: $reservationId) {
             _id
-            typecomments
-            price
+            type
+            comments
             date
+            time
             isApproved
         }
     }
@@ -71,8 +90,8 @@ export const QUERY_BOOKINGS = gql`
                 _id
                 type
                 comments
-                price
                 date
+                time
             }
             user {
                 _id
@@ -93,8 +112,8 @@ export const QUERY_SINGLE_BOOKING = gql`
                 _id
                 type
                 comments
-                price
                 date
+                time
             }
             user {
                 _id

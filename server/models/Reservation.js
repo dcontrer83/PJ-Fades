@@ -5,7 +5,6 @@ const reservationSchema = new Schema({
     // Type of Service being reserved for
     type: {
         type: String,
-        required: true
     },
     // Comments made by the User
     comments: {
@@ -13,15 +12,13 @@ const reservationSchema = new Schema({
         minlength: 1,
         maxLength: 280
     },
-    // Price of the service
-    price: {
-        type: Number,
-        required: true
+    // Time Selected of the service
+    time: {
+        type: String,
     },
     // Date selected for the Service
     date: {
-        type: Date,
-        requried: true
+        type: String,
     },
     // Person who created the reservation
     user: {
@@ -32,7 +29,7 @@ const reservationSchema = new Schema({
     isApproved: {
         type: Boolean,
         required: true,
-        default: UniqueOperationTypesRule
+        default: true
     }
 });
 

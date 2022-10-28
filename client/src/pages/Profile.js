@@ -11,15 +11,16 @@ const Profile = (props) => {
 
 
     const style = {
-        maxHeight: {
-            height: '100vh'
-        },
         offset: {
             height: "93px"
         },
         main: {
-            height: "100%"
+            backgroundColor: "#caf0f8",
+            fontSize: '1.2em'
         },
+        border: {
+            border: '2px solid #000000'
+        }
     }
 
     if (loading) {
@@ -27,24 +28,26 @@ const Profile = (props) => {
     }
 
     return (
-        <main>
+        <main style={style.main}>
             <div style={style.offset}></div>
-            <div style={style.main} className='mt-3'>
+            <div className='mt-3'>
                 <h2 className='text-center'>Welcome, {user.username}!</h2>
                 {user.reservations.length ? (
-                    <h3 className='text-center mt-5 mb-5'>Reservations:</h3>
+                    <h3 className='text-center mt-5 mb-4'>Reservations:</h3>
                 ) : (
                     <h3 className='text-center mt-5 mb-5'>No Planned Reservations</h3>
                 )
                 }
-                <div className='col-12 col-md-10'>
-                    <ReservationList
-                        reservations={user.reservations}
-                        style={style.maxHeight}
-                    />
+                <div className='d-flex justify-content-center align-items-center'>
+                    <div className='col-12 col-md-10 text-center'>
+                        <ReservationList
+                            reservations={user.reservations}
+                            style={style.maxHeight}
+                        />
+                    </div>
                 </div>
             </div>
-        </main>
+        </main >
     )
 }
 

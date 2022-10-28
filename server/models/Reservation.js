@@ -5,7 +5,6 @@ const reservationSchema = new Schema({
     // Type of Service being reserved for
     type: {
         type: String,
-        required: true
     },
     // Comments made by the User
     comments: {
@@ -16,12 +15,10 @@ const reservationSchema = new Schema({
     // Time Selected of the service
     time: {
         type: String,
-        required: true
     },
     // Date selected for the Service
     date: {
-        type: Date,
-        requried: true
+        type: String,
     },
     // Person who created the reservation
     user: {

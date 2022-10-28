@@ -49,12 +49,15 @@ const Reservation = (props) => {
         event.preventDefault();
         try {
             // Create the Reservation
+            console.log(formState);
             const { data } = await createReservation({
                 variables: {
-                    type: formState.type,
-                    comments: formState.comments,
-                    date: new Date(formState.date).toIsoString(),
-                    time: formState.time
+                    reservationInput: {
+                        type: formState.type,
+                        comments: formState.comments,
+                        date: formState.date,
+                        time: formState.time
+                    }
                 }
             });
 
@@ -66,7 +69,7 @@ const Reservation = (props) => {
                 time: ''
             });
         } catch (err) {
-            throw err;
+            console.log(JSON.stringify(err, null, 2));
         }
     }
 
@@ -77,7 +80,7 @@ const Reservation = (props) => {
                 <h2 className='text-center'>Create a Reservation</h2>
                 {/* If the user is logged in, render the Reservation Form */}
                 {Auth.loggedIn() ? (
-                    <Form className='mx-auto' style={style.formBox2}>
+                    <Form className='mx-auto' style={style.formBox2} onSubmit={handleFormSubmit}>
                         <Form.Group className='mt-2'>
                             <Form.Label className='mt-3'>Select a Service:</Form.Label>
                             <Form.Select

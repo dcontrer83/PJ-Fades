@@ -36,6 +36,24 @@ export const QUERY_SINGLE_USER = gql`
     }
 `;
 
+export const QUERY_PROFILE = gql`
+    query profile {
+        profile {
+            _id
+            username
+            email
+            reservations {
+                _id
+                type
+                comments
+                date
+                time
+                isApproved
+            }
+        }
+    }
+`;
+
 export const QUERY_RESERVATIONS = gql`
     query reservations {
         reservations {

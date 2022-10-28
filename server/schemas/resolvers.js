@@ -18,6 +18,19 @@ const resolvers = {
             return User.findOne({ username }).populate('reservations');
         },
 
+        // Retrieve the profile of the user
+        profile: async (parent, args, context) => {
+            try {
+                if (context.user) {
+                    return User.findOne({ _id: context.user._id }).populate('reservations')
+                } else {
+                    throw new AuthenticationError('Must be logged in');
+                }
+            } catch (err) {
+                throw err;
+            }
+        },
+
         // Retrieve all Reservations
         reservations: async () => {
             return Reservation.find();
@@ -80,24 +93,16 @@ const resolvers = {
         createReservation: async (parent, { reservationInput }, context) => {
             try {
                 if (context.user) {
-                    const exists = await Reservation.findOne({
-                        date: reservationInput.date,
-                        time: reservationInput.time
-                    })
-                    if (exists) {
-                        throw new Error("Reservation already exists for that time!")
-                    } else {
-                        // Create the Reservation
-                        const reservationData = await Reservation.create(reservationInput);
+                    // Create the Reservation
+                    const reservationData = await Reservation.create(reservationInput);
 
-                        // Add the reservation to the User
-                        await User.findOneAndUpdate(
-                            { _id: context.user._id },
-                            { $addToSet: { reservations: reservationData._id } }
-                        );
-
-                        return reservationData;
-                    }
+                    // Add the reservation to the User
+                    await User.findOneAndUpdate(
+                        { _id: context.user._id },
+                        { $addToSet: { reservations: reservationData._id } }
+                    );
+                    console.log("server" + reservationData);
+                    return reservationData;
                 }
             } catch (err) {
                 throw err;

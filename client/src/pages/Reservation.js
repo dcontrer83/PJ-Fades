@@ -60,7 +60,6 @@ const Reservation = (props) => {
                     }
                 }
             });
-
             // Then, reset the form state
             setFormState({
                 type: '',

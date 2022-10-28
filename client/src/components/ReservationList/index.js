@@ -3,15 +3,21 @@ import React from 'react';
 const ReservationList = ({
     reservations,
 }) => {
+    const style = {
+        border: {
+            border: '2px solid #000000'
+        }
+    }
+
     return (
         <div>
             {reservations &&
                 reservations.map((reservation) => (
-                    <div key={reservation._id} className="card mb-3">
-                        <p>Reservation Type: {reservation.type}</p>
-                        <p>Date of Reservation: {reservation.date}</p>
-                        <p>Time of Reservation: {reservation.time}</p>
-                        <p>Comments Made: {reservation.comments}</p>
+                    <div key={reservation._id} className="card mb-3" style={style.border}>
+                        <p className='m-2'><strong>Reservation Type: </strong> {reservation.type}</p>
+                        <p className='m-2'><strong>Date of Reservation: </strong>{reservation.date}</p>
+                        <p className='m-2'><strong>Time of Reservation: </strong>{reservation.time}</p>
+                        <p className='m-2'><strong>Comments Made: </strong>{reservation.comments}</p>
                     </div>
                 ))}
         </div>

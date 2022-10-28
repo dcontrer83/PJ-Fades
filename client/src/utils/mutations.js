@@ -25,7 +25,7 @@ export const LOGIN_USER = gql`
 `;
 
 export const CREATE_RESERVATION = gql`
-    mutation createReservation($reservationInput: ReservationInput!) {
+    mutation createReservation($reservationInput: ReservationInput) {
         createReservation(reservationInput: $reservationInput) {
             _id
             type

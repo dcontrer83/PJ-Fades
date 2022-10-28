@@ -52,10 +52,12 @@ const Reservation = (props) => {
             console.log(formState);
             const { data } = await createReservation({
                 variables: {
-                    type: formState.type,
-                    comments: formState.comments,
-                    date: formState.date,
-                    time: formState.time
+                    reservationInput: {
+                        type: formState.type,
+                        comments: formState.comments,
+                        date: formState.date,
+                        time: formState.time
+                    }
                 }
             });
 

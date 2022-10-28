@@ -101,8 +101,7 @@ const resolvers = {
                         { _id: context.user._id },
                         { $addToSet: { reservations: reservationData._id } }
                     );
-
-                    console.log(reservationData);
+                    console.log("server" + reservationData);
                     return reservationData;
                 }
             } catch (err) {

@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header should match snapshot 1`] = `
+"<nav class=\\"fixed-top navbar navbar-expand-sm navbar-light bg-light\\">
+  <div style=\\"margin: 0px; max-width: 100%;\\" class=\\"container\\"><a href=\\"/\\" class=\\"navbar-brand\\">𝐏𝐉-𝐅𝐀𝐃𝐄𝐒</a><img src=\\"logo.png\\" alt=\\"logo\\" style=\\"width: 92px; height: 75px;\\"><button aria-controls=\\"navbar\\" type=\\"button\\" aria-label=\\"Toggle navigation\\" class=\\"navbar-toggler collapsed\\"><span class=\\"navbar-toggler-icon\\"></span></button>
+    <div style=\\"margin: 0px; max-width: 100%;\\" class=\\"container-lg\\">
+      <div class=\\"justify-content-end navbar-collapse collapse\\" id=\\"navbar\\">
+        <div class=\\"justify-content-around navbar-nav\\" style=\\"width: 60%; margin-right: 10%; font-size: 20px;\\"><a href=\\"/\\" data-rr-ui-event-key=\\"/\\" class=\\"nav-link\\">Home</a><a href=\\"/gallery\\" data-rr-ui-event-key=\\"/gallery\\" class=\\"nav-link\\">Gallery</a><a href=\\"/contact\\" data-rr-ui-event-key=\\"/contact\\" class=\\"nav-link\\">Contact</a><a href=\\"/reservation\\" data-rr-ui-event-key=\\"/reservation\\" class=\\"nav-link\\">Reservation</a><a href=\\"/login\\" data-rr-ui-event-key=\\"/login\\" class=\\"nav-link\\">Login</a></div>
+      </div>
+    </div>
+  </div>
+</nav>"
+`;

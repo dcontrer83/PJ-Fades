@@ -2,6 +2,7 @@
 
 ## Table of Contents
 [Description](#description) <br />
+[Deployed Application](#deployed) <br/>
 [Installation](#installation) <br />
 [Technologies](#technologies) <br />
 [Screenshots](#screenshots) <br />
@@ -11,6 +12,9 @@
 
 ## Description
 As a local small business, PJFades brings quality cuts straight to your doorstep. Patrick Ebba, a certified barber, has asked our team (Daniel Kang, Diana Contreras, and Felix Cagatin) to develop a website for his business in order to increase his online presence and create the structure for his online business.
+
+## Deployed
+Visit the live deployed application [here](https://pj-fades.herokuapp.com/)!
 
 ## Installation
 ### Installing the Dependencies

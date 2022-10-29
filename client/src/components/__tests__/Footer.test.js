@@ -8,6 +8,11 @@ import { render, screen, fireEvent, waitFor } from '@testing-library/react'
 
 let container;
 let root;
+let aElement;
+let instagram;
+let div1Element;
+let div2Element;
+
 globalThis.IS_REACT_ACT_ENVIRONMENT = true;
 
 beforeEach(() => {
@@ -36,15 +41,6 @@ describe('Footer', () => {
     })
 });
 
-let aElement;
-let instagram;
-
-function getAElement() {
-    render(<Footer />);
-    aElement = screen.getByTestId('a-element');
-    instagram = screen.getByTestId('instagram');
-}
-
 describe('a element', () => {
     it('should be in the document', () => {
         getAElement();
@@ -65,15 +61,6 @@ describe('a element', () => {
     });
 });
 
-let div1Element;
-let div2Element;
-
-function getDivElements() {
-    render(<Footer />);
-    div1Element = screen.getByTestId('div-1-element');
-    div2Element = screen.getByTestId('div-2-element');
-}
-
 describe('div elements', () => {
     it('should be in the document', () => {
         getDivElements();
@@ -91,3 +78,14 @@ describe('div elements', () => {
     })
 })
 
+function getAElement() {
+    render(<Footer />);
+    aElement = screen.getByTestId('a-element');
+    instagram = screen.getByTestId('instagram');
+}
+
+function getDivElements() {
+    render(<Footer />);
+    div1Element = screen.getByTestId('div-1-element');
+    div2Element = screen.getByTestId('div-2-element');
+}

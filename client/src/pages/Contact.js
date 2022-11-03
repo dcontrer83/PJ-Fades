@@ -57,10 +57,10 @@ const Contact = () => {
                 </div>
                 <div className='bg-dark text-white mx-auto' style={style.formBox}>
                     <h2 className='text-center mb-0' style={style.sendTitle}>Send a Message!</h2>
-                    <Form className='mx-auto' style={style.formBox2} onSubmit={handleSubmit}>
+                    <Form data-testid="form-test" className='mx-auto' style={style.formBox2} onSubmit={handleSubmit}>
                         <Form.Group className='mb-3' controlId='contact-form-name'>
                             <Form.Label className='mt-3'>Full Name:</Form.Label>
-                            <Form.Control 
+                            <Form.Control data-testid="input-name"
                             type="text" 
                             name="fullname"
                             value={formData.fullname}
@@ -70,7 +70,7 @@ const Contact = () => {
                         </Form.Group>
                         <Form.Group className='mb-3' controlId='contact-form-email'>
                             <Form.Label>Email:</Form.Label>
-                            <Form.Control 
+                            <Form.Control data-testid="input-email"
                             type="email" 
                             name="email"
                             value={formData.email}
@@ -80,7 +80,7 @@ const Contact = () => {
                         </Form.Group>
                         <Form.Group className='mb-3' controlId='contact-form-message'>
                             <Form.Label>Message:</Form.Label>
-                            <Form.Control 
+                            <Form.Control data-testid="input-message"
                             as="textarea" 
                             rows={3}
                             name="message"
@@ -89,7 +89,7 @@ const Contact = () => {
                             placeholder="message"
                             ></Form.Control>
                         </Form.Group>
-                        <Button type="submit">
+                        <Button data-testid="submit-btn" type="submit">
                             Submit
                         </Button>
                     </Form>

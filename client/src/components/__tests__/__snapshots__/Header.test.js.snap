@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header should match snapshot 1`] = `
+"<nav data-testid=\\"navbar-element\\" class=\\"fixed-top navbar navbar-expand-sm navbar-light bg-light\\">
+  <div data-testid=\\"container-element\\" style=\\"margin: 0px; max-width: 100%;\\" class=\\"container\\"><a data-testid=\\"brand-element\\" href=\\"/\\" class=\\"navbar-brand\\">𝐏𝐉-𝐅𝐀𝐃𝐄𝐒</a><img data-testid=\\"img-element\\" src=\\"logo.png\\" alt=\\"logo\\" style=\\"width: 92px; height: 75px;\\"><button aria-controls=\\"navbar\\" type=\\"button\\" aria-label=\\"Toggle navigation\\" class=\\"navbar-toggler collapsed\\"><span class=\\"navbar-toggler-icon\\"></span></button>
+    <div style=\\"margin: 0px; max-width: 100%;\\" class=\\"container-lg\\">
+      <div class=\\"justify-content-end navbar-collapse collapse\\" data-testid=\\"collapse-element\\" id=\\"navbar\\">
+        <div class=\\"justify-content-around navbar-nav\\" data-testid=\\"nav-element\\" style=\\"width: 60%; margin-right: 10%; font-size: 20px;\\"><a data-testid=\\"home-element\\" href=\\"/\\" data-rr-ui-event-key=\\"/\\" class=\\"nav-link\\">Home</a><a data-testid=\\"gallery-element\\" href=\\"/gallery\\" data-rr-ui-event-key=\\"/gallery\\" class=\\"nav-link\\">Gallery</a><a data-testid=\\"contact-element\\" href=\\"/contact\\" data-rr-ui-event-key=\\"/contact\\" class=\\"nav-link\\">Contact</a><a data-testid=\\"reservation-element\\" href=\\"/reservation\\" data-rr-ui-event-key=\\"/reservation\\" class=\\"nav-link\\">Reservation</a><a data-testid=\\"login-element\\" href=\\"/login\\" data-rr-ui-event-key=\\"/login\\" class=\\"nav-link\\">Login</a></div>
+      </div>
+    </div>
+  </div>
+</nav>"
+`;

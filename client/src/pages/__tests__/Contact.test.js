@@ -36,6 +36,35 @@ describe('Form', () => {
         fireEvent.change(screen.getByTestId('input-message'), { target: { value: 'Hello user'}});
 
         expect(screen.getByTestId('input-name').value).toEqual('John Doe');
+        expect(screen.getByTestId('input-email').value).toEqual('someUser@email.com');
+        expect(screen.getByTestId('input-message').value).toEqual('Hello user');
 
+    });
+});
+
+let div1Element;
+let div2Element;
+let div3Element;
+let div4Element;
+
+function getAllDivElements() {
+    render(<Contact />);
+    div1Element = screen.getByTestId('div-1-element');
+    div2Element = screen.getByTestId('div-2-element');
+    div3Element = screen.getByTestId('div-3-element');
+    div4Element = screen.getByTestId('div-4-element');
+}
+
+describe('Div elements', () => {
+    it('should be in the document', () => {
+        getAllDivElements();
+        expect(div1Element).toBeInTheDocument();
+        expect(div2Element).toBeInTheDocument();
+        expect(div3Element).toBeInTheDocument();
+        expect(div4Element).toBeInTheDocument();
+    });
+    it('should have specific style', () => {
+        getAllDivElements();
+        expect(div1Element).toHaveStyle('height: 93px');
     })
 })

@@ -66,5 +66,13 @@ describe('Div elements', () => {
     it('should have specific style', () => {
         getAllDivElements();
         expect(div1Element).toHaveStyle('height: 93px');
-    })
-})
+        expect(div2Element).toHaveStyle('height: 100%');
+        expect(div3Element).toHaveStyle('marginTop: 40px; marginBottom: 50px;');
+        expect(div4Element).toHaveStyle('height: 500px');
+    });
+    it('should have specific className', () => {
+        getAllDivElements();
+        expect(div3Element).toHaveClass('text-center');
+        expect(div4Element).toHaveClass('bg-dark text-white mx-auto');
+    });
+});

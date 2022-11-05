@@ -97,4 +97,39 @@ describe('Heading elements', () => {
         expect(h1Element).toHaveTextContent('Contact');
         expect(h2Element).toHaveTextContent('Send a Message!');
     });
+});
+
+let p1Element;
+let p2Element;
+let p2AElement;
+
+function getAllParagraphElements() {
+    render(<Contact />);
+    p1Element = screen.getByTestId('p-1-element');
+    p2Element = screen.getByTestId('p-2-element');
+    p2AElement = screen.getByTestId('p-2-a-element');
+}
+
+describe('Paragraph elements', () => {
+    it('should be in the document', () => {
+        getAllParagraphElements();
+        expect(p1Element).toBeInTheDocument();
+        expect(p2Element).toBeInTheDocument();
+        expect(p2AElement).toBeInTheDocument();
+    });
+    it('should have specific className', () => {
+        getAllParagraphElements();
+        expect(p1Element).toHaveClass('fs-3');
+        expect(p2Element).toHaveClass('fs-3');
+    });
+    it('should have specific text content', () => {
+        getAllParagraphElements();
+        expect(p1Element).toHaveTextContent('Phone number: 1-951-553-4409');
+        expect(p2Element).toHaveTextContent('DM me on Instagram!');
+        expect(p2AElement).toHaveTextContent('Instagram!');
+    });
+    it('should redirect to proper link', () => {
+        getAllParagraphElements();
+        expect(p2AElement.href).toBe('https://instagram.com/pushnpj?igshid=YmMyMTA2M2Y=');
+    })
 })

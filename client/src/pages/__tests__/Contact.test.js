@@ -76,3 +76,25 @@ describe('Div elements', () => {
         expect(div4Element).toHaveClass('bg-dark text-white mx-auto');
     });
 });
+
+let h1Element;
+let h2Element;
+
+function getAllHeadingElements() {
+    render(<Contact />);
+    h1Element = screen.getByTestId('heading-1-element');
+    h2Element = screen.getByTestId('heading-2-element');
+}
+
+describe('Heading elements', () => {
+    it('should be in the document', () => {
+        getAllHeadingElements();
+        expect(h1Element).toBeInTheDocument();
+        expect(h2Element).toBeInTheDocument();
+    });
+    it('should have specific text content', () => {
+        getAllHeadingElements();
+        expect(h1Element).toHaveTextContent('Contact');
+        expect(h2Element).toHaveTextContent('Send a Message!');
+    });
+})

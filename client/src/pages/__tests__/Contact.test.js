@@ -131,5 +131,27 @@ describe('Paragraph elements', () => {
     it('should redirect to proper link', () => {
         getAllParagraphElements();
         expect(p2AElement.href).toBe('https://instagram.com/pushnpj?igshid=YmMyMTA2M2Y=');
-    })
-})
+    });
+});
+
+let formElement;
+
+function getFormElement() {
+    render(<Contact />);
+    formElement = screen.getByTestId('form-element');
+}
+
+describe('Form element', () => {
+    it('should be in the document', () => {
+        getFormElement();
+        expect(formElement).toBeInTheDocument();
+    });
+    it('should have specific className', () => {
+        getFormElement();
+        expect(formElement).toHaveClass('mx-auto');
+    });
+    it('should have specific style', () => {
+        getFormElement();
+        expect(formElement).toHaveStyle('width: 60%');
+    });
+});

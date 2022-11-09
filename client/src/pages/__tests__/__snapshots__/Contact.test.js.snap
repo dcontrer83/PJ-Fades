@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Contact should match snapshot 1`] = `
+"<main>
+  <div data-testid=\\"div-1-element\\" style=\\"height: 93px;\\"></div>
+  <div data-testid=\\"div-2-element\\" style=\\"height: 100%;\\">
+    <div data-testid=\\"div-3-element\\" class=\\"text-center\\" style=\\"margin-top: 40px; margin-bottom: 50px;\\">
+      <h1 data-testid=\\"heading-1-element\\">Contact</h1>
+      <p data-testid=\\"p-1-element\\" class=\\"fs-3\\">Phone number: 1-951-553-4409</p>
+      <p data-testid=\\"p-2-element\\" class=\\"fs-3\\">DM me on <a data-testid=\\"p-2-a-element\\" href=\\"https://instagram.com/pushnpj?igshid=YmMyMTA2M2Y=\\">Instagram!</a></p>
+    </div>
+    <div data-testid=\\"div-4-element\\" class=\\"bg-dark text-white mx-auto\\" style=\\"height: 500px;\\">
+      <h2 data-testid=\\"heading-2-element\\" class=\\"text-center mb-0\\" style=\\"padding: 25px;\\">Send a Message!</h2>
+      <form data-testid=\\"form-element\\" style=\\"width: 60%;\\" class=\\"mx-auto\\">
+        <div data-testid=\\"form-group-element\\" class=\\"mb-3\\"><label class=\\"mt-3 form-label\\" for=\\"contact-form-name\\" data-testid=\\"label-name-element\\">Full Name:</label><input data-testid=\\"input-name\\" name=\\"fullname\\" placeholder=\\"name\\" type=\\"text\\" id=\\"contact-form-name\\" class=\\"form-control\\" value=\\"\\"></div>
+        <div class=\\"mb-3\\"><label class=\\"form-label\\" for=\\"contact-form-email\\" data-testid=\\"label-email-element\\">Email:</label><input data-testid=\\"input-email\\" name=\\"email\\" placeholder=\\"Email address\\" type=\\"email\\" id=\\"contact-form-email\\" class=\\"form-control\\" value=\\"\\"></div>
+        <div class=\\"mb-3\\"><label class=\\"form-label\\" for=\\"contact-form-message\\" data-testid=\\"label-message-element\\">Message:</label><textarea data-testid=\\"input-message\\" rows=\\"3\\" name=\\"message\\" placeholder=\\"message\\" id=\\"contact-form-message\\" class=\\"form-control\\"></textarea></div><button type=\\"submit\\" data-testid=\\"submit-btn\\" class=\\"btn btn-primary\\">Submit</button>
+      </form>
+    </div>
+  </div>
+</main>"
+`;

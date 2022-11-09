@@ -204,4 +204,13 @@ describe('Label elements', () => {
         expect(labelEmailElement).toHaveTextContent('Email:');
         expect(labelMessageElement).toHaveTextContent('Message:');
     });
-})
+});
+
+describe('Contact', () => {
+    it('should match snapshot', () => {
+        act(() => {
+            root.render(<Contact />);
+        });
+        expect(pretty(container.innerHTML)).toMatchSnapshot();
+    });
+});

@@ -155,3 +155,53 @@ describe('Form element', () => {
         expect(formElement).toHaveStyle('width: 60%');
     });
 });
+
+let formGroupElement;
+
+function getGroupElement() {
+    render(<Contact />);
+    formGroupElement = screen.getByTestId('form-group-element');
+}
+
+describe('Form group element', () => {
+    it('should be in the document', () => {
+        getGroupElement();
+        expect(formGroupElement).toBeInTheDocument();
+    });
+    it('should have specific className', () => {
+        getGroupElement();
+        expect(formGroupElement).toHaveClass('mb-3');
+    });
+});
+
+let labelNameElement;
+let labelEmailElement;
+let labelMessageElement;
+
+function getAllLabelElements() {
+    render(<Contact />);
+    labelNameElement = screen.getByTestId('label-name-element');
+    labelEmailElement = screen.getByTestId('label-email-element');
+    labelMessageElement = screen.getByTestId('label-message-element');
+}
+
+describe('Label elements', () => {
+    it('should be in the document', () => {
+        getAllLabelElements();
+        expect(labelNameElement).toBeInTheDocument();
+        expect(labelEmailElement).toBeInTheDocument();
+        expect(labelMessageElement).toBeInTheDocument();
+    });
+    it('should have specific className', () => {
+        getAllLabelElements();
+        expect(labelNameElement).toHaveClass('mt-3 form-label');
+        expect(labelEmailElement).toHaveClass('form-label');
+        expect(labelMessageElement).toHaveClass('form-label');
+    });
+    it('should have specific text content', () => {
+        getAllLabelElements();
+        expect(labelNameElement).toHaveTextContent('Full Name:');
+        expect(labelEmailElement).toHaveTextContent('Email:');
+        expect(labelMessageElement).toHaveTextContent('Message:');
+    });
+})

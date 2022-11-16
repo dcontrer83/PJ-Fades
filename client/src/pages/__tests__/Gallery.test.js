@@ -66,5 +66,27 @@ describe('Div elements', () => {
         expect(div3Element).toHaveClass('d-flex flex-column flex-lg-row align-items-center');
         expect(div4Element).toHaveClass('bg-light d-flex justify-content-center align-items-center');
         expect(div5Element).toHaveClass('d-flex flex-row bg-light');
+    });
+});
+
+let h1Element;
+
+function getH1Element() {
+    render(<Gallery />);
+    h1Element = screen.getByTestId('h1-element');
+}
+
+describe('H1 element', () => {
+    it('should be in the document', () => {
+        getH1Element();
+        expect(h1Element).toBeInTheDocument();
+    });
+    it('should have specific className', () => {
+        getH1Element();
+        expect(h1Element).toHaveClass('text-center mt-5');
+    });
+    it('should have specific text content', () => {
+        getH1Element();
+        expect(h1Element).toHaveTextContent('Gallery');
     })
 })

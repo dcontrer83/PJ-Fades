@@ -88,5 +88,56 @@ describe('H1 element', () => {
     it('should have specific text content', () => {
         getH1Element();
         expect(h1Element).toHaveTextContent('Gallery');
-    })
-})
+    });
+});
+
+let mainImg1Element;
+let mainImg2Element;
+let img0Element;
+let img1Element;
+let img2Element;
+let img3Element;
+let img4Element;
+let img5Element;
+let img6Element;
+let img7Element;
+let img8Element;
+
+function getMainImg1Element() {
+    render(<Gallery />);
+    mainImg1Element = screen.getByTestId('main-img-1-element');
+    img0Element = screen.getByTestId('img-0-element');
+    img1Element = screen.getByTestId('img-1-element');
+    img2Element = screen.getByTestId('img-2-element');
+    img3Element = screen.getByTestId('img-3-element');
+    img4Element = screen.getByTestId('img-4-element');
+    img5Element = screen.getByTestId('img-5-element');
+    img6Element = screen.getByTestId('img-6-element');
+    img7Element = screen.getByTestId('img-7-element');
+    img8Element = screen.getByTestId('img-8-element');
+}
+
+describe('Img elements', () => {
+    it('main img 1 should be in the document', () => {
+        getMainImg1Element();
+        expect(mainImg1Element).toBeInTheDocument();
+    });
+    it('main img 2 should be in the document',  () => {
+        getMainImg1Element();
+        fireEvent.click(img1Element);
+        mainImg2Element = screen.getByTestId('main-img-2-element');
+        expect(mainImg2Element).toBeInTheDocument();
+    });
+    it('all img elements should be in the document', () => {
+        getMainImg1Element();
+        expect(img0Element).toBeInTheDocument();
+        expect(img1Element).toBeInTheDocument();
+        expect(img2Element).toBeInTheDocument();
+        expect(img3Element).toBeInTheDocument();
+        expect(img4Element).toBeInTheDocument();
+        expect(img5Element).toBeInTheDocument();
+        expect(img6Element).toBeInTheDocument();
+        expect(img7Element).toBeInTheDocument();
+        expect(img8Element).toBeInTheDocument();
+    });
+});

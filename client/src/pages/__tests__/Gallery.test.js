@@ -103,7 +103,7 @@ let img6Element;
 let img7Element;
 let img8Element;
 
-function getMainImg1Element() {
+function getAllImgElements() {
     render(<Gallery />);
     mainImg1Element = screen.getByTestId('main-img-1-element');
     img0Element = screen.getByTestId('img-0-element');
@@ -119,17 +119,17 @@ function getMainImg1Element() {
 
 describe('Img elements', () => {
     it('main img 1 should be in the document', () => {
-        getMainImg1Element();
+        getAllImgElements();
         expect(mainImg1Element).toBeInTheDocument();
     });
     it('main img 2 should be in the document',  () => {
-        getMainImg1Element();
+        getAllImgElements();
         fireEvent.click(img1Element);
         mainImg2Element = screen.getByTestId('main-img-2-element');
         expect(mainImg2Element).toBeInTheDocument();
     });
     it('all img elements should be in the document', () => {
-        getMainImg1Element();
+        getAllImgElements();
         expect(img0Element).toBeInTheDocument();
         expect(img1Element).toBeInTheDocument();
         expect(img2Element).toBeInTheDocument();
@@ -139,5 +139,21 @@ describe('Img elements', () => {
         expect(img6Element).toBeInTheDocument();
         expect(img7Element).toBeInTheDocument();
         expect(img8Element).toBeInTheDocument();
+    });
+    it('should have specific style', () => {
+        getAllImgElements();
+        expect(mainImg1Element).toHaveStyle('height: auto; width: 90%');
+        expect(img0Element).toHaveStyle('height: 150px; width: 150px; objectFit: cover; borderRadius: 15px; cursor: pointer; borderStyle: solid;');
+        expect(img1Element).toHaveStyle('height: 150px; width: 150px; objectFit: cover; borderRadius: 15px; cursor: pointer; borderStyle: solid;');
+        expect(img2Element).toHaveStyle('height: 150px; width: 150px; objectFit: cover; borderRadius: 15px; cursor: pointer; borderStyle: solid;');
+        expect(img3Element).toHaveStyle('height: 150px; width: 150px; objectFit: cover; borderRadius: 15px; cursor: pointer; borderStyle: solid;');
+        expect(img4Element).toHaveStyle('height: 150px; width: 150px; objectFit: cover; borderRadius: 15px; cursor: pointer; borderStyle: solid;');
+        expect(img5Element).toHaveStyle('height: 150px; width: 150px; objectFit: cover; borderRadius: 15px; cursor: pointer; borderStyle: solid;');
+        expect(img6Element).toHaveStyle('height: 150px; width: 150px; objectFit: cover; borderRadius: 15px; cursor: pointer; borderStyle: solid;');
+        expect(img7Element).toHaveStyle('height: 150px; width: 150px; objectFit: cover; borderRadius: 15px; cursor: pointer; borderStyle: solid;');
+        expect(img8Element).toHaveStyle('height: 150px; width: 150px; objectFit: cover; borderRadius: 15px; cursor: pointer; borderStyle: solid;');
+        fireEvent.click(img1Element);
+        mainImg2Element = screen.getByTestId('main-img-2-element');
+        expect(mainImg2Element).toHaveStyle('height: 100%; width: auto; objectFit: contain');
     });
 });

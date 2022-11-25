@@ -156,4 +156,17 @@ describe('Img elements', () => {
         mainImg2Element = screen.getByTestId('main-img-2-element');
         expect(mainImg2Element).toHaveStyle('height: 100%; width: auto; objectFit: contain');
     });
+    it('should have proper src attributes', () => {
+        getAllImgElements();
+        expect(mainImg1Element).toHaveAttribute('src', 'DSC01193.jpg');
+        expect(img0Element).toHaveAttribute('src', 'DSC01193.jpg');
+        expect(img1Element).toHaveAttribute('src', 'Hero-Gallery.PNG');
+        expect(img2Element).toHaveAttribute('src', 'IMG_0525.jpg');
+        expect(img3Element).toHaveAttribute('src', 'IMG_3489.jpg');
+        expect(img4Element).toHaveAttribute('src', 'IMG_3735.jpg');
+        expect(img5Element).toHaveAttribute('src', 'IMG_4210.jpg');
+        expect(img6Element).toHaveAttribute('src', 'IMG_9194.jpg');
+        expect(img7Element).toHaveAttribute('src', 'SampleStyle1.PNG');
+        expect(img8Element).toHaveAttribute('src', 'SampleStyle2.PNG');
+    })
 });

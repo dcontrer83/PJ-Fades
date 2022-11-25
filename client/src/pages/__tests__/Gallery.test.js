@@ -168,5 +168,24 @@ describe('Img elements', () => {
         expect(img6Element).toHaveAttribute('src', 'IMG_9194.jpg');
         expect(img7Element).toHaveAttribute('src', 'SampleStyle1.PNG');
         expect(img8Element).toHaveAttribute('src', 'SampleStyle2.PNG');
-    })
+        fireEvent.click(img1Element);
+        mainImg2Element = screen.getByTestId('main-img-2-element');
+        expect(mainImg2Element).toHaveAttribute('src', 'Hero-Gallery.PNG');
+    });
+    it('should have proper alt attributes', () => {
+        getAllImgElements();
+        expect(mainImg1Element).toHaveAttribute('alt', 'expanded');
+        expect(img0Element).toHaveAttribute('alt', 'hero');
+        expect(img1Element).toHaveAttribute('alt', 'hero');
+        expect(img2Element).toHaveAttribute('alt', 'hero');
+        expect(img3Element).toHaveAttribute('alt', 'hero');
+        expect(img4Element).toHaveAttribute('alt', 'hero');
+        expect(img5Element).toHaveAttribute('alt', 'hero');
+        expect(img6Element).toHaveAttribute('alt', 'hero');
+        expect(img7Element).toHaveAttribute('alt', 'hero');
+        expect(img8Element).toHaveAttribute('alt', 'hero');
+        fireEvent.click(img1Element);
+        mainImg2Element = screen.getByTestId('main-img-2-element');
+        expect(mainImg2Element).toHaveAttribute('alt', 'expanded');
+    });
 });

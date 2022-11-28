@@ -188,4 +188,25 @@ describe('Img elements', () => {
         mainImg2Element = screen.getByTestId('main-img-2-element');
         expect(mainImg2Element).toHaveAttribute('alt', 'expanded');
     });
+    it('should change scale when mouse hover over', async () => {
+        getAllImgElements();
+        fireEvent.mouseEnter(img0Element);
+        await waitFor(() => expect(img0Element).toHaveStyle('transform: scale(1.1) translateZ(0)'), { timeout: 3000 });
+        fireEvent.mouseEnter(img1Element);
+        await waitFor(() => expect(img1Element).toHaveStyle('transform: scale(1.1) translateZ(0)'), { timeout: 3000 });
+        fireEvent.mouseEnter(img2Element);
+        await waitFor(() => expect(img2Element).toHaveStyle('transform: scale(1.1) translateZ(0)'), { timeout: 3000 });
+        fireEvent.mouseEnter(img3Element);
+        await waitFor(() => expect(img3Element).toHaveStyle('transform: scale(1.1) translateZ(0)'), { timeout: 3000 });
+        fireEvent.mouseEnter(img4Element);
+        await waitFor(() => expect(img4Element).toHaveStyle('transform: scale(1.1) translateZ(0)'), { timeout: 3000 });
+        fireEvent.mouseEnter(img5Element);
+        await waitFor(() => expect(img5Element).toHaveStyle('transform: scale(1.1) translateZ(0)'), { timeout: 3000 });
+        fireEvent.mouseEnter(img6Element);
+        await waitFor(() => expect(img6Element).toHaveStyle('transform: scale(1.1) translateZ(0)'), { timeout: 3000 });
+        fireEvent.mouseEnter(img7Element);
+        await waitFor(() => expect(img7Element).toHaveStyle('transform: scale(1.1) translateZ(0)'), { timeout: 3000 });
+        fireEvent.mouseEnter(img8Element);
+        await waitFor(() => expect(img8Element).toHaveStyle('transform: scale(1.1) translateZ(0)'), { timeout: 3000 });
+    });
 });

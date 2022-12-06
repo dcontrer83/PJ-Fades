@@ -210,3 +210,23 @@ describe('Img elements', () => {
         await waitFor(() => expect(img8Element).toHaveStyle('transform: scale(1.1) translateZ(0)'), { timeout: 3000 });
     });
 });
+
+let row1Element;
+let row2Element;
+let row3Element;
+
+function getAllRowElements() {
+    render(<Gallery />);
+    row1Element = screen.getByTestId('row-1-element');
+    row2Element = screen.getByTestId('row-2-element');
+    row3Element = screen.getByTestId('row-3-element');
+}
+
+describe('Row elements', () => {
+    it('should be in the document', () => {
+        getAllRowElements();
+        expect(row1Element).toBeInTheDocument();
+        expect(row2Element).toBeInTheDocument();
+        expect(row3Element).toBeInTheDocument();
+    });
+});

@@ -229,4 +229,10 @@ describe('Row elements', () => {
         expect(row2Element).toBeInTheDocument();
         expect(row3Element).toBeInTheDocument();
     });
+    it('should have specific className', () => {
+        getAllRowElements();
+        expect(row1Element).toHaveClass('text-center mt-3 row-cols-sm-1');
+        expect(row2Element).toHaveClass('text-center mt-3 row-cols-sm-1');
+        expect(row3Element).toHaveClass('text-center mt-3 row-cols-sm-1');
+    });
 });

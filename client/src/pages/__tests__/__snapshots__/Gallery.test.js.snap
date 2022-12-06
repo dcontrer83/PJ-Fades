@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Gallery should match snapshot 1`] = `
+"<main>
+  <div data-testid=\\"div-1-element\\" style=\\"height: 75px;\\"></div>
+  <div data-testid=\\"div-2-element\\" style=\\"height: 1000px;\\">
+    <h1 data-testid=\\"h1-element\\" class=\\"text-center mt-5\\">Gallery</h1>
+    <div data-testid=\\"div-3-element\\" class=\\"d-flex flex-column flex-lg-row align-items-center\\" style=\\"height: 95%; width: 100%;\\">
+      <div data-testid=\\"div-4-element\\" class=\\"bg-light d-flex justify-content-center align-items-center\\" style=\\"height: 50%; width: 100%;\\"><img data-testid=\\"main-img-1-element\\" style=\\"height: auto; width: 90%;\\" src=\\"DSC01193.jpg\\" alt=\\"expanded\\"></div>
+      <div data-testid=\\"div-5-element\\" class=\\"d-flex flex-row bg-light\\" style=\\"height: 50%; width: 100%;\\">
+        <div data-testid=\\"row-1-element\\" class=\\"text-center mt-3 row row-cols-sm-1\\">
+          <div class=\\"col\\"><img data-testid=\\"img-0-element\\" src=\\"DSC01193.jpg\\" style=\\"height: 150px; width: 150px; object-fit: cover; border-radius: 15px; cursor: pointer; border-style: solid;\\" alt=\\"hero\\"></div>
+          <div class=\\"col\\"><img data-testid=\\"img-1-element\\" src=\\"Hero-Gallery.PNG\\" style=\\"height: 150px; width: 150px; object-fit: cover; border-radius: 15px; cursor: pointer; border-style: solid;\\" alt=\\"hero\\"></div>
+          <div class=\\"col\\"><img data-testid=\\"img-2-element\\" src=\\"IMG_0525.jpg\\" style=\\"height: 150px; width: 150px; object-fit: cover; border-radius: 15px; cursor: pointer; border-style: solid;\\" alt=\\"hero\\"></div>
+        </div>
+        <div data-testid=\\"row-2-element\\" class=\\"text-center mt-3 row row-cols-sm-1\\">
+          <div class=\\"col\\"><img data-testid=\\"img-3-element\\" src=\\"IMG_3489.jpg\\" style=\\"height: 150px; width: 150px; object-fit: cover; border-radius: 15px; cursor: pointer; border-style: solid;\\" alt=\\"hero\\"></div>
+          <div class=\\"col\\"><img data-testid=\\"img-4-element\\" src=\\"IMG_3735.jpg\\" style=\\"height: 150px; width: 150px; object-fit: cover; border-radius: 15px; cursor: pointer; border-style: solid;\\" alt=\\"hero\\"></div>
+          <div class=\\"col\\"><img data-testid=\\"img-5-element\\" src=\\"IMG_4210.jpg\\" style=\\"height: 150px; width: 150px; object-fit: cover; border-radius: 15px; cursor: pointer; border-style: solid;\\" alt=\\"hero\\"></div>
+        </div>
+        <div data-testid=\\"row-3-element\\" class=\\"text-center mt-3 row row-cols-sm-1\\">
+          <div class=\\"col\\"><img data-testid=\\"img-6-element\\" src=\\"IMG_9194.jpg\\" style=\\"height: 150px; width: 150px; object-fit: cover; border-radius: 15px; cursor: pointer; border-style: solid;\\" alt=\\"hero\\"></div>
+          <div class=\\"col\\"><img data-testid=\\"img-7-element\\" src=\\"SampleStyle1.PNG\\" style=\\"height: 150px; width: 150px; object-fit: cover; border-radius: 15px; cursor: pointer; border-style: solid;\\" alt=\\"hero\\"></div>
+          <div class=\\"col\\"><img data-testid=\\"img-8-element\\" src=\\"SampleStyle2.PNG\\" style=\\"height: 150px; width: 150px; object-fit: cover; border-radius: 15px; cursor: pointer; border-style: solid;\\" alt=\\"hero\\"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>"
+`;

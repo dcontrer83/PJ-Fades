@@ -236,3 +236,12 @@ describe('Row elements', () => {
         expect(row3Element).toHaveClass('text-center mt-3 row-cols-sm-1');
     });
 });
+
+describe('Gallery', () => {
+    it('should match snapshot', () => {
+        act(() => {
+            root.render(<Gallery />);
+        });
+        expect(pretty(container.innerHTML)).toMatchSnapshot();
+    });
+});
